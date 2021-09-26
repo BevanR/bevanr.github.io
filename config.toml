@@ -2,3 +2,58 @@ baseURL = 'https://js.geek.nz/'
 languageCode = 'en-us'
 title = 'JS.geek.NZ Bevan Rudge'
 theme = "anatole"
+
+[params]
+title = "JS.geek.NZ"
+author = "JS.geek.NZ"
+description = """
+I'm Bevan Rudge
+
+I'm a web technologist and software engineer.
+
+I've been building the web since 2002.
+
+I am most satisfied when I;
+
+1. solve problems // engineering
+1. share my skills // mentoring
+1. craft beautiful experiences for
+   1. fellow humans using the internet
+	 1. fellow software engineers
+
+"""
+profilePicture = "images/profile.jpg"
+copyright = "2007-{{ YEAR }} Bevan Rudge"
+postSectionName = "blog"
+disableThemeSwitcher = true
+doNotLoadAnimations = true
+contentratio = 0.8
+readMore = true
+enableRobotsTXT = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+
+singleDateFormat = "2 Jan 2006"
+indexDateFormat = "2 Jan 2006"
+listDateFormat = "Jan 2"
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Archive"
+  weight = 200
+  identifier = "blog"
+  url = "/blog/"
+
+  [[menu.main]]
+  name = "LinkedIn ↗"
+  weight = 300
+  identifier = "linkedin"
+  url = "https://www.linkedin.com/in/bevanr"
+	
