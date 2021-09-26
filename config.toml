@@ -1,0 +1,4 @@
+baseURL = 'https://js.geek.nz/'
+languageCode = 'en-us'
+title = 'JS.geek.NZ Bevan Rudge'
+theme = "anatole"
