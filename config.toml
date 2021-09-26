@@ -25,7 +25,7 @@ I am most satisfied when I;
 profilePicture = "images/profile.jpg"
 copyright = "2007-{{ YEAR }} Bevan Rudge"
 postSectionName = "blog"
-disableThemeSwitcher = true
+# disableThemeSwitcher = true
 doNotLoadAnimations = true
 contentratio = 0.8
 readMore = true
