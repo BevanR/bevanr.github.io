@@ -22,6 +22,7 @@ See `.github/actions/gh-pages.yml`.
 
 ## Tasks
 
-- [ ] Find a good scraper
+- [x] Find a good scraper
 - [ ] Import HTML content
+- [ ] Support .html in Hugo path. Or redirect URLs to paths without it
 - [ ] Migrate images
