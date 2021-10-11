@@ -4,34 +4,35 @@ title = 'JS.geek.NZ Bevan Rudge'
 theme = "anatole"
 
 [params]
-title = "JS.geek.NZ"
-author = "JS.geek.NZ"
-description = """
-I'm Bevan Rudge
+  # @see https://themes.gohugo.io/themes/anatole/
+  title = "JS.geek.NZ"
+  author = "JS.geek.NZ"
+  description = """
+  I'm Bevan Rudge
 
-I'm a web technologist and software engineer.
+  I'm a web technologist and software engineer.
 
-I've been building the web since 2002.
+  I've been building the web since 2002.
 
-I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
+  I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
 
-I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
-"""
-profilePicture = "images/profile.jpg"
-copyright = "2007-{{ YEAR }} Bevan Rudge"
-postSectionName = "blog"
-# disableThemeSwitcher = true
-doNotLoadAnimations = true
-contentratio = 0.7
-readMore = true
-enableRobotsTXT = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
+  I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
+  """
+  profilePicture = "images/profile.jpg"
+  copyright = "2007-{{ YEAR }} Bevan Rudge"
+  postSectionName = "blog"
+  # disableThemeSwitcher = true
+  doNotLoadAnimations = true
+  contentratio = 0.7
+  readMore = true
+  enableRobotsTXT = true
+  pygmentsCodeFences = true
+  pygmentsUseClasses = true
 
+  singleDateFormat = "2 Jan 2006"
+  indexDateFormat = "2 Jan 2006"
+  listDateFormat = "Jan 2"
 
-singleDateFormat = "2 Jan 2006"
-indexDateFormat = "2 Jan 2006"
-listDateFormat = "Jan 2"
 [menu]
 
   [[menu.main]]

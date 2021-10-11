@@ -19,3 +19,9 @@ git push
 ```
 
 See `.github/actions/gh-pages.yml`.
+
+## Tasks
+
+- [ ] Find a good scraper
+- [ ] Import HTML content
+- [ ] Migrate images
