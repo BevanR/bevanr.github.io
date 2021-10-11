@@ -1,0 +1,18 @@
+---
+title: "Wonderful Webpack tips"
+date: Tue Dec 13 2016 00:00:00 GMT+1300 (New Zealand Daylight Time)
+---
+
+    <p>Here are my recently learnt tips for advanced usage of <a href="https://webpack.github.io/">the wonderful Webpack</a></p>
+<ol>
+<li><code>--hot</code> does not do would you would expect.  <code>webpack --watch</code> and <code>webpack-dev-server</code> do what you'd expect <code>--hot</code> to do, even without that option.</li>
+<li><code>--lazy</code> stops WDS from doing what you'd expect <code>--hot</code> to do.</li>
+<li><code>--hot</code> allows modules (files) to be updated <strong>in place</strong>, without reloading the webpage.</li>
+<li><code>--open</code> is pretty handy</li>
+<li><code>--inline</code> can be moved to <code>webpack.config.js</code></li>
+<li>Webpack has built in support for lazy loading through the AMD spec for <code>require()</code>: <code>require.ensure()</code></li>
+<li>Support for multiple bundles (entry points) is beautiful</li>
+<li>WDS serves up static files if you keep them in the context path, with no additional config</li>
+</ol>
+<p>What I have not answered yet, is what the the advantage of stylesheet bundles is, if the styles are cached in the browser along with the JavaScript bundle?</p>
+  

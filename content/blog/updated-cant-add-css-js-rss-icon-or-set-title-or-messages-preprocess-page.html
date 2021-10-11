@@ -1,0 +1,18 @@
+---
+title: "UPDATED: Can't Add CSS, JS, RSS Icon Or Set Title Or Messages In Preprocess Page?"
+date: Fri Jun 12 2009 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p><strong>UPDATE:  Due to recent changes to our website the code snippet (the valuable part of this blog post) got accidentally lost.  If you read this already, please come back to see the sample code.  Thanks!</strong><br>
+Often you want to add CSS files, scripts, feed icons or even set Drupal's page title from the theme layer.  The most obvious place to call Drupal's functions for these tasks is probably in a page preprocess function.  However calling the following Drupal API functions from a theme or module's <code>NAME_preprocess_page()</code> function often doesn't work;</p>
+<ul>
+<li><a title="Read documentation on drupal_add_css()" href="http://api.drupal.org/api/function/drupal_add_css/6"><code>drupal_add_css()</code></a></li>
+<li><a title="Read documentation on drupal_add_js()" href="http://api.drupal.org/api/function/drupal_add_js/6"><code>drupal_add_js()</code></a></li>
+<li><a title="Read documentation for drupal_add_feed()" href="http://api.drupal.org/api/function/drupal_add_feed/6"><code>drupal_add_feed()</code></a></li>
+<li><a title="Read documentation on drupal_add_link()" href="http://api.drupal.org/api/function/drupal_add_link/6"><code>drupal_add_link()</code></a></li>
+<li><a title="Read documentation for drupal_set_html_head()" href="http://api.drupal.org/api/function/drupal_set_html_head/6"><code>drupal_set_html_head()</code></a></li>
+<li><a title="Read documentation for drupal_set_title()" href="http://api.drupal.org/api/function/drupal_set_title/6"><code>drupal_set_title()</code></a></li>
+<li><a title="Read documentation for drupal_set_message()" href="http://api.drupal.org/api/function/drupal_set_message/6"><code>drupal_set_message()</code></a> (or <a title="Visit the Devel package's projgect page on Drupal.org" href="http://drupal.org/project/devel">devel.module</a>'s <code>dpm()</code>).</li>
+</ul>
+<p><a href="http://civicactions.com/blog/2009/jun/11/cant_add_css_js_rss_icon_or_set_title_or_messages_preprocess_page" target="_blank">read more</a></p>
+  

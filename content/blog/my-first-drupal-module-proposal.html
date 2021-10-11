@@ -1,0 +1,22 @@
+---
+title: "My first Drupal Module -- proposal"
+date: Fri Jun 22 2007 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p>I propose an in-context web-editing interface, and drupal module, that;</p>
+<ul>
+<li>is intuitive,
+</li>
+<li>allows in-context editing by integrating elements of node-edit form into the view of a node,</li>
+<li>is minimalistic in it's interface elements,
+</li>
+<li>has a working javascript-less interface,</li>
+<li>has a moderately enhanced interface when js is available (autosave),</li>
+<li>eliminates the need to use node-edit form for most node-editing and many node-adding use cases,</li>
+<li dragover="true">makes the web writable for 'John' that is only used to desktop editing.</li>
+</ul>
+<p>(See my <a href="http://drupal.geek.nz/2007/06/writable-web.html">previous post</a> to get this in context.)</p>
+<p>The node-edit form will still need to exist for power users and more complicated node edit and add cases.  The goal is not to replace it, but rather make the editing process simple, straightforward and intuitive for the majority of node-edit cases that do not require the power tools only available in node-edit.</p>
+<p>As a <span style="font-weight: bold;">very simple</span> example and demonstration I have created a static page that demonstrates the method that I currently see how this could work. Current <a href="http://drupal.geek.nz/files/in-context-orig.html">view</a> and <a href="http://drupal.geek.nz/files/in-context-orig-edit.html">edit</a> pages would be merged minimalisticly into a <a href="http://drupal.geek.nz/files/in-context-demo.html">modified view</a>. Try clicking the title or body and typing in the modified view.</p>
+<p>Obviously there would also be some basic functionality, like 'revert' (page refresh), 'save', and 'cancel' (if autosave is enabled).  I imagine this would take the form of a 'toolbar'.</p>
+  

@@ -1,0 +1,46 @@
+---
+title: "Writing the Right Stuff, in the 21st Century"
+date: Tue Feb 07 2017 00:00:00 GMT+1300 (New Zealand Daylight Time)
+---
+
+    <p><span><br>
+I was recently discussing the problems of software security and code quality</span><span>.  These articles inspired the conversation;</span></p>
+<ul>
+<li><a href="https://medium.com/message/everything-is-broken-81e5f33a24e1">Everything is Broken</a>, a sincere recount of the awfulness of almost all software.</li>
+<li><a href="https://www.fastcompany.com/28121/they-write-right-stuff">They Write the Right Stuff</a>, how the Shuttle Group makes nearly-perfect software for NASA space shuttles.</li>
+<li><a href="http://www-users.math.umn.edu/~arnold/disasters/ariane.html">The Explosion of the Ariane 5</a> was because of a software bug.</li>
+</ul>
+<p>There are lessons for us software engineers/teams in these articles, especially in “<em>They Write the Right Stuff</em>”.  But all of these quality control mechanisms come at a cost.</p>
+<p>But first, let’s put the article in perspective;</p>
+<ol>
+<li>It was published in 1996, 20 years ago.  Git didn't exist.  (And CVS sucked.)  "Agile" meant something about your sporting ability, not software.  And a tonne of software tools and modern high level languages didn't exist or were in their infancy.  The Shuttle Group probably had few or no choice of libraries to use, and had to write their own GPS software, among other things.</li>
+<li>Further; NASA is probably the perfect client/employer; Big budget, high technical capability, commitment, and detailed specs.  Few software teams/engineers are so lucky to have such a client/employer.</li>
+<li>
+    On the flip-side, if the software fails, astronauts die.  And the world’s media looks for someone to blame.  And the US government will make sure some heads roll.  There are high consequences to buggy software.
+<blockquote><p>"If the software isn't perfect, some of the people we go to meetings with might die.</p></blockquote>
+</li>
+<li>Finally, Fast Company is a media company.  They publish high quality content that attracts the eyes of consumers, which allows Fast Company to sell advertising or subscriptions.  That means they sensationalise the story.  <a href="https://history.nasa.gov/computers/Ch4-5.html">NASA’s own “<em>Computers in Spaceflight</em>” appears to be a more realistic account of the history of NASA shuttle software.</a></li>
+</ol>
+<hr>
+<p>Now; <strong>What are the costs?</strong></p>
+<p>Most notably, the Shuttle Group followed a strictly waterfall process;</p>
+<blockquote><p>“...about one-third of the process of writing software happens before anyone writes a line of code.</p></blockquote>
+<blockquote><p>“The specs for [a change that involves 6,366 lines of code] run 2,500 pages.”</p></blockquote>
+<p>Second, the Shuttle Group was expensive to run;</p>
+<blockquote><p>“... the group’s $35 million per year budget is a trivial slice of the NASA pie, but on a dollars-per-line basis, it makes the group among the nation's most expensive software organizations.</p></blockquote>
+<p>Extrapolating some other numbers; The program had about ~424,400 lines of code in 1996, which had been worked on for 21 years at a total cost of ~$700M.  That's ~$1,650 per line of code.  (Not that lines of code is a meaningful measure of code complexity.)  I've not accounted for inflation.</p>
+<p>The economic costs are <em>just the software</em>; I.e. travel and office expenses, but predominantly, <em>people's time (salaries)</em>.</p>
+<hr>
+<p>I first read that article about 9 years ago.  After rereading it last weekend, I realised it had a profound impact on how highly I value software quality;  I have always strived for the most elegant, simple and readable code.</p>
+<p>More recently I've learned that it's almost never worth the effort to get software to its highest possible quality.  The problem with making software right in the first round of development is that you probably haven't found the best solution yet.  You probably missed a more elegant solution.  And you probably have not fully understood the entirety of problem and all its edge cases.</p>
+<p>Further, the more time you spend refining a work, the more emotional value you give it.  This makes it harder to recognize or admit that it might be the wrong solution, and <em>much</em> harder to delete.</p>
+<p>(Good code deletion skills are highly valuable, by the way!)</p>
+<p>In other words, we have to find the balance between "<em>It works</em>" and "<em>It is right</em>" (correct, easy to read, simple, elegant, deduplicate, etcetera), considering the risk of not making it right (yet) along with the time, people and money available.</p>
+<p>Usually it is better to get something out which only mostly works but is not totally “right”, then only make it “right” once we understand the problem and possible solutions better.  That might be hours or months later, depending on the scope and scale of the problem and solutions, how fast the feedback loop is, and what other priorities come up in the meantime.  Or it might be never.</p>
+<p>Often "making it right" happens when that code needs more work for a new feature.  That is why we groan at the old smelly corners of our code that we have to work with that were "so awfully written".  And why we like blame the since-departed colleague.  We fail to recognize those smelly corners were probably <em>perfect</em> at their time (given the other constraints).</p>
+<p>This illustrates the importance of getting a fast feedback loop.  Automated testing, good logging &amp; analysis tools, frequently publishing code (even if it's not quite right), a small core of highly engaged customers (and/or awesome testers) all help tighten that feedback loop.</p>
+<p>Automated testing is especially important when refactoring old smelly corners.  Every edge case and subtlety must be captured by tests before you can safely start refactoring or modifying it.  But once you have complete test coverage, you can unleash the hounds on the refactoring without concern for breaking it.</p>
+<p><a href="https://www.obehave.io/">Obehave offers automated website tests for everyone</a>.  Anyone can write automate tests with Obehave, not just programmers.  Tests are written in Gherkin, a plain English syntax pioneered for Behaviour-Driven Development (BDD).  Obehave tests can run on a schedule; every hour, day or week.  And can integrate with your continuous integration environment.</p>
+<hr>
+<p><a href="https://blog.inf.ed.ac.uk/sapm/2014/03/14/we-could-write-nearly-perfect-software-but-we-choose-not-to/">“<em>We Could Write Nearly Perfect Software but We Choose Not to</em>”</a> highlights these and some other points.  It is significantly lower quality but is worth the read up to point two.  It's a much shorter article too.</p>
+  

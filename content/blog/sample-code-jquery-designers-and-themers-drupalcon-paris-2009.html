@@ -1,0 +1,17 @@
+---
+title: "Sample Code For JQuery For Designers And Themers, DrupalCon Paris 2009"
+date: Thu Sep 10 2009 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p><img alt="Drupal Conference Paris" src="http://farm3.static.flickr.com/2623/3917316854_ee3858fdba.jpg" align="right">I was extremely pleased with my DrupalCon Paris session on <a href="http://paris2009.drupalcon.org/session/jquery-designers-and-themers">jQuery for Designers and Themers</a>.  It was a great success – my best session yet.</p>
+<p>You can see the slides at <a href="http://docs.google.com/present/view?id=drmcbw4_1816qv2fkc7">tinyurl.com/jQuery-Designers</a> and download the <a href="http://drupal.org/project/jq4dat">sample theme code from drupal.org/project/jq4dat</a>.</p>
+<p>I made a couple of references to blog posts and work I've done with jQuery during the session:</p>
+<ul>
+<li>I wrote a <a href="http://civicactions.com/blog/2009/feb/22/jquerydashboard_plugin">jQuery dashboard plugin</a> that uses jQuery UI's Sortable library to make an iGoogle-like dashboard with an example server-side implementation.</li>
+<li>Calling <a href="http://api.drupal.org/api/function/drupal_get_js/6"><code>drupal_get_js()</code></a> and <a href="http://api.drupal.org/api/function/drupal_get_css/6"><code>drupal_get_css()</code></a> from page preprocess functions creates an unnecessary performance hit.  <a href="http://civicactions.com/blog/2009/jun/11/cant_add_css_js_rss_icon_or_set_title_or_messages_preprocess_page">This blog post</a> discusses a technique that allows javascript and CSS to be added in the page preprocess function without needing to call <a href="http://api.drupal.org/api/function/drupal_get_js/6"><code>drupal_get_js()</code></a> and <a href="http://api.drupal.org/api/function/drupal_get_css/6"><code>drupal_get_css()</code></a>.</li>
+</ul>
+<p>I forgot to demonstrate jQuery UI effects.  You can see demos of these on <a href="http://jqueryui.com/demos/effect/">jQueryUI.com</a> and I added an implementation of the <code>explode</code> and <code>bounce</code> effects to the sample theme when you roll over the "<em>Hey nice username!</em>" message and click on it.</p>
+<p>A related topic is Drupal's javascript theme layer.  I added an example of this in the sample code;  Defining a theme function, overriding it, and calling it to get some content themed into HTML.  The javascript theme layer is based on the same principles of overriding as Drupal's PHP theme layer, so it should be easy to understand if you've ever overridden a theme function in <code>template.php</code>.</p>
+<p>I didn't have time to properly explain the subtle differences between <code>Drupal.behaviors</code> functions with the <code>context</code> parameter and simply executing anonymous javascript functions on page-ready.  I included examples of both in the sample code with inline comments might help to understand the difference.</p>
+<p>Thanks to everyone who attended for your enthusiasm and excellent questions which guided the session and made it more conversational than presentational.  I look forward to another opportunity to present this session at the next Drupal event.  Maybe <a href="http://groups.drupal.org/node/26217">DrupalSouth Wellington January 2010</a>?</p>
+  

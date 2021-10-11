@@ -1,0 +1,31 @@
+---
+title: "Scaling Up Usability Testing In Drupal"
+date: Tue May 06 2008 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <div style="float: right; width: 45%; padding: .5em; margin: .5em 0 .5em .5em; border: 1px solid black; background: #eee;"><strong>Still not sure why usability testing is important?</strong>  See what a linux hobbyist found in an <a href="http://contentconsumer.wordpress.com/2008/04/27/is-ubuntu-useable-enough-for-my-girlfriend/">informal usability test on Ubuntu</a>.</div>
+<p><strong>Usability testing</strong> (hereafter "<strong>UT</strong>") is getting a lot of attention in <a href="http://drupal.org">Drupal</a> -- and rightly so <acronym title="In My Humble Opinion">IMHO</acronym>.  If we aim to have <a href="http://buytaert.net/drupal-7-timeline">"100%" test coverage</a> on Drupal's code and functionality for Drupal 7, it stands to reason we also need test "coverage" on Drupal's usability.  If not, it's far too easy for bad interfaces to be developed that pass all the functional and unit tests, but fail miserably in the real world!</p>
+<p><a href="http://drupal.org/user/214218">Jimmy Berry (aka boombatower)</a> of <acronym title="Google Highly-Open Participation [Contest]">GHOP</acronym> fame plans to take the initial (but giant) steps in this direction in the Google Summer of code 2008.</p>
+<div style="float: right; width: 45%; padding: 0 .5em; margin: .5em 0 .5em .5em; border: 1px solid black; background: #eee;">
+<h2><acronym title="Usability Testing">UT</acronym> Jargon:</h2>
+<ul>
+<li>The <strong>software</strong> is what is being tested (e.g. Drupal).</li>
+<li>The <strong>evaluator</strong> is the user using that software (e.g. a random person).</li>
+<li>The <strong>Usability Testing Engineer</strong> (hereafter "<strong>UTE</strong>") is the software developer(s) or other person(s) who design and implement the usability test for the software and the tasks and scenario for the evaluator (e.g. a Drupal developer, a usability professional).</li>
+</ul>
+</div>
+<p><a href="http://groups.drupal.org/node/11011">Jimmy's project</a> is to develop a <strong>Usability Testing Suite</strong> (hereafter "<strong>UTS</strong>") to quickly create "unit tests" for Drupal's usability.  The UTS will implement a framework for gathering data from the evaluator's <acronym title="User Experience">UX</acronym> and interactions with Drupal and the web browser.</p>
+<p>The UTS will be limited to relatively informal tests and limited in it's range of data collection, but it will be able to provide wider and more extensive coverage than any other type of <acronym title="Usability Testing">UT</acronym>.</p>
+<div style="float: left; width: 45%; padding: .5em .5em 0; margin: .5em .5em .5em 0; border: 1px solid black; background: #eee;">
+  <a href="http://drop.cwgordon.com/">DROP</a> student <a href="http://drupal.org/user/277624">drpuser</a> made 2 <a href="http://blip.tv/file/852655">great</a> <a href="http://blip.tv/file/852741">videos</a> of his informal <a href="http://drop.cwgordon.com/node/61">UT on Drupal 6' installation</a> <acronym title="User Interface">UI</acronym> that demonstrates the value of informal <acronym title="Usability Testing">UT</acronym>.
+<p>  <embed src="http://blip.tv/play/AbS5FgA" type="application/x-shockwave-flash" width="260" height="185" allowscriptaccess="always" allowfullscreen="true"></p>
+<p>The <acronym title="Usability Testing Suite">UTS</acronym> will make this type of informal UT easy to deploy and standardize on a large scale, and allow for split testing, to test <acronym title="User Interface">UI</acronym> ideas and prototypes, and even "regression testing", to ensure usability is not degrading.</p>
+</div>
+<p>The initial version of the <acronym title="Usability Testing Suite">UTS</acronym> will only gather basic data like a Drupal log (e.g. <acronym title="Forms API">FAPI</acronym> events, current uri, timestamps etc.), mouse or click tracking (with the <a href="http://drupal.org/project/click_heatmap">Click Heatmap</a> module, created by Jimmy as a <acronym title="Google Highly Open Participation [Contest]">GHOP</acronym> task) and live feedback by text (like one-way <acronym title="Instant Messaging">IM</acronym>).  Future versions will be able to record, collect and analyse more data through UTS' extensible API.  Such extensions to UTS could capture screen recordings, static screenshots, camera and microphone recording and more.</p>
+<p>Further, the UTS will be usable for any project built on Drupal.  This means that the UTS could be configured to test out any Drupal website or webapp to find out why member-conversion rates are low, what the users' pain points are or why something is difficult to use.  And all without the high costs of a UT lab!</p>
+<p>And still further, since the test occurs remotely and not in real-time, the evaluators (users) can be volunteers or real site users, and they can do the evaluating from their regular computer and environment.</p>
+<div style="float: right; width: 45%; padding: .5em; margin: .5em 0 .5em .5em; border: 1px solid black; background: #eee;">This is not to say informal testing and the UTS are a replacement for formal UT and UT labs.  Formal UT and UT labs have other advantages.</div>
+<p>This last point is important.  An evaluator in a usability lab can feel uncomfortable with the physical environment, unaccustomed to the hardware or software they have been provided to do the test or even pressured to perform -- as if the evaluator him/herself were being examined (even though steps are taken to avoid this).  This can easily skew results and data in formal UT.  Informal UT, and especially remote and non-real-time UT can reduce these risks to nearly negligible.  This gives clearer and cleaner results.</p>
+<p>I look forward to working with Jimmy as his mentor on the project.  Bring it on SoC 2008!</p>
+<p>Cross-posted from <a href="http://www.civicactions.com/blog/bevan_rudge">my blog at CivicActions</a>: <a href="http://www.civicactions.com/blog/scaling_up_usability_testing_in_drupal" title="http://www.civicactions.com/blog/scaling_up_usability_testing_in_drupal">http://www.civicactions.com/blog/scaling_up_usability_testing_in_drupal</a></p>
+  

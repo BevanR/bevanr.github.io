@@ -1,0 +1,17 @@
+---
+title: "jQuery.dashboard() Plugin"
+date: Mon Feb 23 2009 00:00:00 GMT+1300 (New Zealand Daylight Time)
+---
+
+    <p>    The jQuery.dashboard() plugin for jQuery provides a framework that makes it easy for web application developers to create highly configurable dashboard-like user interfaces (similar to <a href="http://www.google.com/ig" rel="nofollow">iGoogle</a>) in their web applications.  <a href="http://drupal.geek.nz/static/dashboard/demo.html" rel="nofollow">Jump straight to the demo</a>.</p>
+<p>jQuery.dashboard() requires <a href="http://jqueryui.com/" rel="nofollow">jQuery UI</a> 1.7's (<a href="http://blog.jquery.com/2009/02/12/jquery-ui-17-is-the-new-16/" rel="nofollow">the new 1.6rc6</a>) <a href="http://docs.jquery.com/UI/Sortable" rel="nofollow">Sortable library</a>, which in turn requires jQuery UI <a href="http://docs.jquery.com/UI/Draggable" rel="nofollow">Draggable</a>, core and <a href="http://jquery.com/" rel="nofollow">jQuery 1.3</a>.</p>
+<p>jQuery.dashboard() requires that a number of serverside callbacks be defined where the current user's widgets per column and minimized status are made available and saved, and where settings for each widget can be retrieved and saved.  Optionally, a number of event callbacks can be assigned anonymous callback functions or server-side executable javascript file callbacks.</p>
+<p>Currently jQuery.dashboard() has only been deployed on a small number of private web apps, and should be considered alpha or maybe beta at best.  The code has been written quite abstractly and extensibly and may well be re-usable with little or now changes for things like Drupal's panels module, an <code>admin/build/block</code> overhaul or other uses.</p>
+<ul>
+<li>You can demo jQuery.dashboard() plugin at <a href="http://drupal.geek.nz/static/dashboard/demo.html" title="http://drupal.geek.nz/static/dashboard/demo.html">http://drupal.geek.nz/static/dashboard/demo.html</a>.</li>
+<li>You can checkout from subversion from <a href="https://svn.civicactions.net/repos/bevan/dashboard/" title="https://svn.civicactions.net/repos/bevan/dashboard/">https://svn.civicactions.net/repos/bevan/dashboard/</a></li>
+<li>You can <a href="http://drupal.geek.nz/static/dashboard/dashboard.zip" rel="nofollow">download a zip of the files</a>.</li>
+</ul>
+<p>An example implementation including example server-side ajax callbacks in PHP and javascript callbacks is included.  For now, the example implementation also serves as documentation for the API.</p>
+<p>jQuery.dashboard(), including jquery.dashboard.js, dashboard.css, and documentation found in ajaxData.php, demo.html, demo.css, demo.js, and widgets/* are made avilable under version 2 of the GNU General Public License.</p>
+  

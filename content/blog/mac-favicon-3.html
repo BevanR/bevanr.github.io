@@ -1,0 +1,30 @@
+---
+title: "Mac Favicon 3"
+date: Mon Jun 02 2008 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p><strong>UPDATE: Mac Favicon and Mac Favicon XL have been deprecated and rereleased.  See <a href="http://drupal.geek.nz/blog/mac-favicon-deprecated-and-released">http://drupal.geek.nz/blog/mac-favicon-deprecated-and-released</a></strong></p>
+<p>With Firefox 3's release now imminent, a number of people have contacted me about whether there will be a version of my <a href="https://addons.mozilla.org/en-US/firefox/addon/3692">Mac Favicon</a> theme for FF3.</p>
+<p>While the short answer is "yes", the long answer is more complicated;  I won't be able to take this on anytime soon -- probably not till August.  A couple of folk have contacted me about doing it themselves.  I would be really happy if someone were to do it.  I would happily test it, release it on <a href="https://addons.mozilla.org/">addons.mozilla.org</a> under Mac Favicon, give you access to do that or link to your release elsewhere.</p>
+<p>Here is a very simple guide on how I went about creating Mac Favicon and <a href="https://addons.mozilla.org/en-US/firefox/addon/3691">Mac Favicon XL</a> for FF2:</p>
+<ul>
+<li>Search and read some documentation on Mozilla's dev site about creating theme packages and XPI installables.</li>
+<li>Find out how to use the DOM inspector on the firefox window itself (not the webpage).</li>
+<li>Find Firefox 3 for Mac's default theme in the application's directory</li>
+<li>Duplicate it.</li>
+<li>Find the CSS file in the theme that has the display definitions for the bookmark toolbar.</li>
+<li>Hack them to NOT hide the favicon image (this will make sense once you've browsed the DOM around the bookmarks toolbar and it's items).</li>
+<li>Zip the modified theme up, install it and restart firefox.</li>
+<li>Test.</li>
+<li>Test also the bookmarks menu, bookmarks sidebar and anywhere else bookmarks and favicons are displayed, since some CSS lines are used to theme multiple occurrences of bookmarks and favicons.  Test also drag drop and reorder etc.</li>
+<li>Repeat previous steps as necessary.</li>
+<li>Once that's working, make another copy.</li>
+<li>Hack a bit further to NOT set the dimensions of the bookmark toolbar's favicons to exactly 16x16px, but set <code>max-width: 32px; max-height: 32px;</code>.</li>
+<li>Install favicon picker module.</li>
+<li>Load some custom icons into some but not all of your bookmarks, in both the menu and the toolbar.</li>
+<li>Zip up, install, restart and test as above.</li>
+<li>Repeat previous steps as necessary.</li>
+<li>Release on addons.mozilla.org, or contact me!</li>
+</ul>
+<p>Well over a year ago that took me the best part of a full working day; say 8 hours.  Now it wouldn't take very much quicker since I've forgotten everything I had to learn to do it then.</p>
+  

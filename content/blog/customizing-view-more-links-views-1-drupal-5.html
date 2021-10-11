@@ -1,0 +1,10 @@
+---
+title: "Customizing "View More" Links In Views 1 For Drupal 5"
+date: Wed Aug 20 2008 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p>A short, quick and easy tip for views theming and customization.<br>
+To customize the text or the destination path/url of a 'view more' link in Views.  Add this to template.php in your phptemplate theme and add cases.<br>
+<code>&lt;?php/** * Override theme_views_more() to set custom link texts and destinations. * @param $path String *&nbsp;&nbsp; The destination of the more link. */function _phptemplate_views_more($path) {&nbsp; $text = 'more';&nbsp; switch ($path) {&nbsp;&nbsp;&nbsp; case 'foo/bar':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $text = 'doh';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;&nbsp; }&nbsp; return "&lt;div class='more-link'&gt;" . l(t($text), $path) . "&lt;/div&gt;";}?&gt;</code><br>
+<a href="http://www.civicactions.com/blog/customizing_view_more_links_in_views_1_for_drupal_5">read more</a></p>
+  

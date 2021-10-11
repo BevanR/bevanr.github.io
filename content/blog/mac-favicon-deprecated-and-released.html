@@ -1,0 +1,66 @@
+---
+title: "Mac Favicon Deprecated -- And RELEASED!"
+date: Tue Jun 03 2008 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <blockquote>
+<h2>Firefox 3 Upgrade?</h2>
+<p>  <a href="https://addons.mozilla.org/en-US/firefox/addon/3692">Mac Favicon</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/3691">Mac Favicon XL</a> themes will not be updated for Firefox 3.  However, you can restore this feature in Firefox 3 using userstyles.org and the 'Stylish' Fiefox extension.  Click your preferred style below, then click 'Load into Stylish' and follow the instructions from userstyles.org;</p>
+<ul>
+<li><a href="http://userstyles.org/styles/5969">Mac Favicon, Firefox 3</a>: show favicons next to bookmark names/titles</li>
+<li><a href="http://userstyles.org/styles/10169">Mac Favicon XL, Firefox 3</a>: show favicons only (hide bookmark names/titles).  Goes well with <a href-"https:="" addons.mozilla.org="" en-us="" firefox="" addon="" 7849"="">Favicon Picker</a></li>
+</ul>
+</blockquote>
+<h2>Original Article:</h2>
+<p><a href="http://drupal.geek.nz/blog/mac-favicon-3#comment-301">Iuru pointed me</a> to a <a href="http://userstyles.org/styles/5969">plugin on userstyles.org</a> that fixes the issue <a href="https://addons.mozilla.org/en-US/firefox/addon/3692">Mac Favicon</a> was designed to resolve in a far more maintainable and cleaner way than Mac Favicon ever could.  Therefore I've decided to deprecate Mac Favicon and <a href="https://addons.mozilla.org/en-US/firefox/addon/3691">Mac Favicon XL</a> themes for Firefox and instead encourage users to install the <a href="https://addons.mozilla.org/en-US/firefox/addon/2108">Stylish addon</a>, then install the <a href="http://userstyles.org/styles/5969">Mac bookmark toolbar favicons style</a> from <a href="http://userstyles.org/">userstyles.org</a>.</p>
+<p>If you prefer Mac Favicon XL, see the instructions that follow.Mac Favicon XL hides the text labels on bookmarks and allows favicon images up to 32 pixels wide and high.  This is useful if you with to further optimize your bookmark toolbar experience by recognition of favicons, and removing the clutter of the text labels.  It's also very useful in conjunction with the <a href="https://addons.mozilla.org/en-US/firefox/addon/3176">Favicon Picker 2 addon</a> to select your own custom (large) icons for bookmarks.</p>
+<p>Favicon Picker 2 has not yet been ported to Firefox 3, but I've contacted the author, <a href="https://addons.mozilla.org/en-US/firefox/user/25737">Robert LaFont Jr</a>, to get an indication of update plans.  I'll update this thread if/when I receive word back from him.</p>
+<p><img src="http://drupal.geek.nz/files/Mac-Favicon-XL.png" alt="Demoing Mac Favicon using Stylish"></p>
+<p>In the meantime, you can install the Mac Favicon XL style in Stylish by going to Stylish's preferences, clicking the "Write" button and copying and pasting the following CSS code into the space provided.  I have not yet been able to get a user account on usertyles.org to release it there.</p>
+<p>Thanks to;</p>
+<ul>
+<li><a href="http://userstyles.org/users/990">Danil Einspanjer</a> for releasing "Mac bookmark toolbar favicons" style which I used to start this.</li>
+<li>Iuru for pointing me to it. (No link available.)</li>
+<li>Robert LaFont Jr for creating favicon picker.</li>
+<li>most of all Mozilla and the Firefox team for making such an awesome killer product!</li>
+</ul>
+<p>And the Stylish code that deprecates Mac Favicon XL theme:</p>
+<pre>  /* No padding on bookmarks */
+  .bookmark-item { padding: 0 1px !important; }
+  /* Restore padding on folders */
+  .bookmark-item[container] { padding: 0 0 0 7px !important; }
+  /* And on bookmarks and folders inside folders */
+  .bookmark-item[container] .bookmark-item { padding: 0 !important; }
+
+  /* Hide the left semicircle on bookmarks */
+  .bookmark-item:hover { background-image: none !important; }
+  /* Restore the left semicircle on folders */
+  .bookmark-item[container]:hover {
+    background-image: url("chrome://global/skin/toolbar/toolbarbutton-customhover-left.png") !important;
+  }
+  .bookmark-item[container]:hover:active, .bookmark-item[container][open="true"] {
+    background-image: url("chrome://browser/skin/bookmark-open-left.png") !important;
+  }
+
+  /* Show favicons on bookmarks */
+  .bookmark-item &gt; .toolbarbutton-icon {
+    display: -moz-box !important;
+    max-width: 38px;
+    max-height: 36px;
+  }
+  /* Hide favicons on folders */
+  .bookmark-item[container] &gt; .toolbarbutton-icon { display: none !important; }
+
+  /* Show a minimalistic background on hover on bookmars */
+  .bookmark-item:hover &gt; .toolbarbutton-icon {
+    background: url("chrome://global/skin/toolbar/toolbarbutton-customhover-mid.png");
+  }
+  .bookmark-item:hover:active &gt; .toolbarbutton-icon {
+    background: url("chrome://browser/skin/bookmark-open-mid.png");
+  }
+
+  /* Hide text labels on bookmarks */
+  .bookmark-item &gt; .toolbarbutton-text-stack { display: none; }
+  /* Show text labels on folders */
+  .bookmark-item[container] &gt; .toolbarbutton-text-stack { display: -moz-stack; }
+</pre>  

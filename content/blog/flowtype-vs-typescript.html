@@ -1,0 +1,11 @@
+---
+title: "Flowtype vs Typescript"
+date: Tue Dec 13 2016 00:00:00 GMT+1300 (New Zealand Daylight Time)
+---
+
+    <p>Flowtype has a small set of features focussed on typechecking.  It is a superset of JavaScript.  It can be transpiled to JavaScript by simply <em>stripping</em> the type annotations.  It allows you to specify types almost as little or as much you like.  It becomes more powerful the more detail you specify.  So you can easily leave some or most of your code with no type specifications.</p>
+<p>Typescript has a large set of features focussed on classical object oriented concepts like <code>abstract</code>, <code>interface</code>, <code>private</code> and others as well as type checking.  It requires third party code is type specified, which makes it a bit of a nuisance to use daily or for rapid development projects.</p>
+<p>The type annotations of both Flowtype and Typescript are identical and compatible.  Both are supersets of JavaScript.  However Typescript extends JavaScript with non-trivial features which are not yet in ECMAscript Next (and may or may not make it).  Flowtype's extensions are trivial.</p>
+<p>Flowtype is less mature and has poorer support and integration with editors.  For example, JetBrains only just introduced support for Flowtype support, but <a href="https://youtrack.jetbrains.com/issue/WEB-24344#tab=Comments">it is still buggy</a> and incompatible with <code>webpack --watch</code> or <code>webpack-dev-server</code>.</p>
+<p>JetBrains has had good Typescript support for sometime already.</p>
+  

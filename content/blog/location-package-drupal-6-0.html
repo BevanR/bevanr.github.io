@@ -1,0 +1,9 @@
+---
+title: "Location Package In Drupal 6"
+date: Mon Oct 27 2008 00:00:00 GMT+1300 (New Zealand Daylight Time)
+---
+
+    <p><a href="http://civicactions.com/">CivicActions</a> recently undertook a project to review, upgrade, test and patch many contributed Drupal 6 modules to ensure their compatibility with localization (multi-lingual website support).  While the endeavour has been supported by <a href="http://www.sonybmg.com/">Sony BMG</a> for their Drupal multisite on which they run about 80 artist websites and <a href="http://myplay.com/">MyPlay.com</a>, the resulting localization-compatible modules will benefit countless Drupal sites including those of some of our other clients when they upgrade to Drupal 6.  As part of this process I documented my recommendations for the upgrade path for the Location package and it's data from Drupal 5 to Drupal 6.  The document follows.</p>
+<p>For most common requirements -- especially multi-lingual sites -- <a href="http://drupal.org/project/location">the Location package</a> is not a good solution for locative data in Drupal 6.  The Location package does not handle i18n well and has l10n problems without simple or general solutions with translation sets.  The recommendation for most cases where locative data is stored in Drupal 6, is to and migrate the data to taxonomy vocabularies and CCK fields.  Both of these options have general solutions for most common i18n issues which make it more flexible for a variety of possible i18n requirements.<br>
+<a href="http://civicactions.com/blog/Location_Package_Drupal_6" target="_blank">read more</a></p>
+  

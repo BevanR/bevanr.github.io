@@ -1,0 +1,11 @@
+---
+title: "A New Way to Migrate WordPress Content Into Drupal"
+date: Wed May 18 2011 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <span class="featured-blog-image">  
+      <img typeof="Image" src="http://www.palantir.net/sites/default/files/styles/bloglandingpage-thumbnail/public/blog/images/migrate-2.jpg?itok=OZcpheAh" width="262" height="175" alt="">  </span>
+            <p><a href="http://rjionline.org/">The Donald W. Reynolds Journalism Institute</a> (RJI) is an organization that seeks out and tests innovations in journalism to find the best solutions for use in the real world.</p>
+<p>Their new Palantir-developed Drupal website replaces a custom PHP website and two WordPress.com blogs.  Part of our assignment involved migrating content from RJI's WordPress blogs into Drupal.  </p>
+<p>Initially, we intended to do this using the <a href="http://drupal.org/project/wordpress_import">WordPress Import</a> module.  However WordPress Import is a stand-alone module that does not integrate with CCK fields, meaning that you cannot import WordPress post categories or authors as CCK text or node-reference fields.  It also has limited options for importing files attached to WordPress posts.</p>
+<p>To solve this problem, we created <a href="http://drupal.org/project/wp_feeds">WordPress XML for Feeds</a>, a module that allows Drupal's <a href="http://drupal.org/project/feeds">Feeds</a> module to parse the WordPress export file (<code>WXR</code>).  It uses a map to create Drupal nodes (or other entities) in the same way that Feeds uses a map to create Drupal nodes from an RSS feed.  This allows site developers to create an arbitrary map that tells Feeds module where and how to store the WordPress post's data in Drupal (e.g., as a CCK field, as a property on the Drupal node, or as some other entity).</p>  

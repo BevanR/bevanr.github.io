@@ -1,0 +1,18 @@
+---
+title: "Upgrade unlocked jail-broken first-generation iPhone to v2 iPhone firmware"
+date: Wed Aug 20 2008 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p>My attempt to upgrade my unlocked and jail-broken first-generation iPhone were badly timed with Apple's release of version 2.0.2 firmware about 24 hours beforehand.  This meant I initially couldn't use <a href="http://blog.iphone-dev.org/post/46350708/my-little-pwnie-quickpwn" title="Fast pwning tool for the iPhone, for windows only">quickpwn</a> because I couldn't restore the 2.0.1 firmware.</p>
+<p>Nevertheless quickpwn (windows only) worked once out of 3 attempts on 2.0.2, but wouldn't unlock the phone for my vodafone-NZ prepay SIM card.  It stopped everytime after operation 0, and once restarted at operation 5 or so after I disconnected and reconnected the phone.</p>
+<p>Then I discovered how to select alternative IPSWs (like iPhone install/restore disk images) in iTunes with alt+'Restore'-button (<a href="http://cnettv.cnet.com/9742-1_53-50003159.html" title="Cheesey CNET video on jail-breaking the iPhone">Thanks CNET</a>) and managed to install my custom IPSW created by <a href="http://blog.iphone-dev.org/post/45276976/good-morning">PwnageTool</a>.  bl46.bin is required by PwnageTool, but not included; I think for legal reasons.  After accidentally downloading bl39.bin instead, I found <a href="http://www.spaziocellulare.com/ispazio/2008/07/20/bl46bin-pwnagetool-download/" title="Download bl46.bin for PwnageTool">bl46.bin here</a> and <a href="http://www.iphone-hacks.com/downloads/file/132" title="Download bl46.bin for PwnageTool">here</a>.</p>
+<p>I now have everything working.  Remote app and WPA2-entreprise (radius server) are 2 apps / features I really appreciate!  <a href="http://culturedcode.com/things/blog/2008/06/a-phone-an-ipod-an-internet-communicator-and-a-full-featured-task-manager.html">Things.app</a> is also syncing and working fine!</p>
+<p>iTunes restored my settings and some of my data (Notes/stickies, alarms etc) when I connected the newly-pwned phone to iTunes for the first time.  Although, as expected I lost all the jail-broken 1.1.4 apps which do not run on version 2 firmware.  Some of the main ones (namely <a href="http://tapulous.com/twinkle/">twinkle</a>) have new versions in the iTunes store or through Cydia (Alternative to Installer.app; Installer doesn't really work yet).  Twinkle and some other iTunes-store apps are free.</p>
+<p>I have <del>2</del> 4 relatively minor problems;</p>
+<ul>
+<li>WPA2 Enterprise at my university requires ienabler, or a similar tool, to get past the firewall.  I can't find such a tool for the iPhone.</li>
+<li>I can't open Bash (via Cydia) to show on Home after installing it.  Am I missing something?</li>
+<li>The phone doesn't lock itself after one minute, even though I have it set to do so.</li>
+<li>MobileMe doesn't seem to work with CalDav-synced google calenders and has made a big freakin' mess!  (I got it on the free trial for the experience, and to see if it might be useful; but I don't expect so).</li>
+</ul>
+  

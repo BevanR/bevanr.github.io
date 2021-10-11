@@ -1,0 +1,140 @@
+---
+title: "Security vulnerabilities in UserPro plugin for WordPress"
+date: Fri May 01 2015 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p><a href="http://codecanyon.net/item/userpro-user-profiles-with-social-login/5958681">UserPro plugin for WordPress</a> versions up to 2.28 have multiple security vulnerabilities that expose the website they are installed on to a wide scope of attack vectors.  The plugin has 27 occurrences a procedure call that is extremely insecure (<code>extract($_POST)</code>) and a futher 57 probably insecure uses of <code>extract()</code>.</p>
+<p>Upon discovering these security vulnerabilies I reported them to Envato, who sells the plugin on behalf of the author on CodeCanyon.net.  I gave Envato a three month deadline for responsible disclosure.  Envato promptly took the plugin off their store and contacted the author.  The author promptly fixed all the known vulnerabilities and released a new secure version.</p>
+<p>I have not reviewed the newest version.  I did review a work in progress and was happy with the author’s progress and improvements.</p>
+<p>The report that I sent to to Envato follows.</p>
+<p><a href="/contact">Want a security audit or review of your own website or code?</a></p>
+<hr>
+<p>This report documents multiple security vulnerabilities in the <a href="http://codecanyon.net/item/userpro-user-profiles-with-social-login/5958681">UserPro plugin for WordPress</a>.</p>
+<p>The scope of attack vectors is extremely wide.  The plugin has 27 occurrences a procedure call that is certainly extremely insecure (<code>extract($_POST)</code>).  It has a futher 57 uses of <code>extract()</code>, many of which look to be approximately equally dangerous after a quick review.</p>
+<p>For this report, only one instance of <code>extract($_POST)</code> was investigated more thoroughly; <code>userpro_process_form()</code>.  That occurrence alone has an extremely wide scope of attack vectors involving 500+ lines of code.</p>
+<p>This report documents just three specific reproducible exploits that allow an untrusted user to:</p>
+<ol>
+<li>Delete any user</li>
+<li>Publish a post, specifying the title, body and any author</li>
+<li>Make themselves an administrator</li>
+</ol>
+<p>However <strong>there are so many ways to exploit UserPro plugin that it is probably not possible to document them all</strong>.  In order to be secured, a large portion (at least) of the plugin would need rewriting.</p>
+<h2 id="impact">Impact</h2>
+<p>Most (if not all) WordPress websites that have installed, activated and configured (in the common/usual way) the UserPro module are probably vulnerable.  According to the <a href="http://codecanyon.net/item/userpro-user-profiles-with-social-login/5958681">plugin’s main distribution page</a> as of 25 March 2015, it has been sold 8,292 times, and 8,753 times on 1 May 2015.</p>
+<p>Of these sales, some licences are probably used for multiple websites (even though the license is only for one website).  Other licenses may not be in use any longer.</p>
+<p>A reasonable estimate of the vulnerable websites might be five to fifteen thousand.</p>
+<h2 id="responsible_disclosure">Responsible disclosure</h2>
+<p>In the best interests of the security of WordPress website users and owners, this report will be published publicly if a fix is not available by 24 June.  That is three months after the vulnerabilities were reported.  This is consistent with <a href="http://googleonlinesecurity.blogspot.com.au/2010/07/rebooting-responsible-disclosure-focus.html"><em>two-way</em> responsible disclosure</a>.</p>
+<p>The vulnerabilities were discovered and researched by Bevan Rudge.  The exploits, this report and the accompanying patch were also developed by Bevan Rudge.  <a href="mailto:bevan@js.geek.nz">bevan@js.geek.nz</a> <a href="http://www.JS.geek.nz">www.JS.geek.nz</a></p>
+<p>The author of UserPro plugin is <a href="http://userproplugin.com/">Deluxe Themes: userproplugin.com</a>.  Deluxe Themes has no public security policy of its own.</p>
+<p>WordPress has a procedure for <a href="https://make.wordpress.org/core/handbook/reporting-security-vulnerabilities/">reporting security vulnerabilities in WordPress plugins</a>.  As per that policy, <a href="mailto:plugins@wordpress.org">plugins@wordpress.org</a> was notified on Tuesday 24 March of these vulnerabilities (without detail).  However because that team only has capacity to deal with WordPress plugins hosted on WordPress.org, it was referred on to Envato.</p>
+<p>The <a href="http://codecanyon.net/item/userpro-user-profiles-with-social-login/5958681">UserPro plugin is sold on the codecanyon Envato Market</a>.  Envato has a procedure for reporting security vulnerabilities of products it sells, called the <a href="http://webuild.envato.com/helpful-hacker/">Helpful Hacker Program</a>.</p>
+<p>These vulnerabilities were reported (without detail initially) to Envato’s Helpful Hacker Program on Wednesday 25 March.</p>
+<p>Dates are NZDT, UTC+13.</p>
+<h2 id="delete_any_user">Delete any user</h2>
+<p>This exploit requires only basic knowledge of how forms work on the internet, and how to use a web browser’s web dev tools to modify them.</p>
+<ol>
+<li>Register two new users that are not administrators; “Andy Attacker” and “Vicky Victim”.</li>
+<li>Note Vicky’s user ID.</li>
+<li>Install and activate the “UserPro” plugin.</li>
+<li>Create a page “UserPro profile/login” with shortcode “[userpro template=view]” and note its URL.</li>
+<li>Login as “Andy Attacker”.</li>
+<li>Navigate to the “UserPro profile/login” page.</li>
+<li>Press “Delete Profile”.</li>
+<li>Use browser tools to find element like <code>&lt;input type="hidden" name="user_id-N" id="user_id-N" value="ID"&gt;</code>.</li>
+<li>Change the <code>value=""</code> attribute to the Vicky’s user ID.</li>
+<li>Press “Yes, delete this profile!”.</li>
+<li>Press “Confirm Deletion”.
+<ul>
+<li><strong>Expected behavior</strong>: A generic validation error.</li>
+<li><strong>Actual behavior</strong>: A message “This account has been deleted successfully” is briefly displayed then the browser is redirected to the homepage.</li>
+</ul>
+</li>
+<li>Press the browser’s “back” button.</li>
+<li>Press the browser’s “reload” button.
+<ul>
+<li><strong>Expected behaviour</strong>: User is not logged in.</li>
+<li><strong>Actual behaviour</strong>: User is still logged in as Andy.</li>
+</ul>
+</li>
+<li>Login as Admin.</li>
+<li>Navigate to “All Users”
+<ul>
+<li><strong>Expected behaviour</strong>: “Vicky Victim” should be a user.  “Andy Attacker” should not be a user.</li>
+<li><strong>Actual behaviour</strong>: “Vicky Victim” is not a user.  “Andy Attacker” is a user.</li>
+</ul>
+</li>
+</ol>
+<h2 id="curl_exploits">cURL exploits</h2>
+<p>The other two exploits are more elaborate and would be difficult to reproduce manually in a web browser.</p>
+<p>As in the “Delete any user” exploit, these validate the security nonce for the user “delete” action (known as <code>$template</code> in code).  Unlike the “Delete any user” exploit, they manipulate the vulnerable UserPro code into taking a different action instead of deleting a user.</p>
+<h3 id="curl_template">cURL template</h3>
+<p>Both exploits use this template for a curl command:</p>
+<pre><code>curl "http://${HOST}/wp-admin/admin-ajax.php" -H "Cookie: wordpress_logged_in_${HASH}=${COOKIE}" --data "action=userpro_process_form&amp;_myuserpro_nonce=${NONCE}&amp;unique_id=${ID}&amp;template=delete&amp;template-9=${ACTION}&amp;${DATA}"
+</code></pre><blockquote>
+<p>Note that <code>template-9</code> can actually be called anything matching regex <code>template-.+</code>.</p>
+<p>Note the lack of <code>wordpress_HASH</code> and <code>PHPSESSID</code> cookies.  This may or may not be a security issue.  If it is, it may or may not be related.  This report did not investigate that.</p>
+</blockquote>
+<h3 id="template_variables">Template variables</h3>
+<ul>
+<li><code>HOST</code>: The hostname of the website to be exploited.</li>
+<li><code>HASH</code>: The has component of the <code>wordpress_logged_in_*</code> cookie.</li>
+<li><code>COOKIE</code>: The value of that cookie, for <em>any</em> logged in user, such as “Andy Attacker”.</li>
+<li><code>NONCE</code> and <code>ID</code>: The nonce and unique ID can be retrieved from the delete form (as in the “Delete any user” exploit) for the logged in user.  The names are <code>_myuserpro_nonce</code> and <code>unique_id</code> respectively.</li>
+<li><code>ACTION</code>: provided by each exploit’s example code below.  See below.</li>
+<li><code>DATA</code>: Form data, provided by each exploit’s example code below.</li>
+</ul>
+<p>Values for <code>HASH</code>, <code>COOKIE</code>, <code>NONCE</code> and <code>ID</code> can all be retrieved from cookies and the form on the “UserPro profile/login” &gt; “Delete” page for any logged in user.</p>
+<p>Exploitable values for <code>ACTION</code> are:</p>
+<ul>
+<li>publish</li>
+<li>delete</li>
+<li>change</li>
+<li>reset</li>
+<li>login</li>
+<li>edit</li>
+<li>register</li>
+</ul>
+<h3 id="publish_new_content">Publish new content</h3>
+<ul>
+<li><code>ACTION</code>: <code>publish</code></li>
+<li><code>DATA</code>: <code>user_id=1&amp;post_title=Hacked&amp;userpro_editor=This post was created by a user without content creation priveleges.</code></li>
+</ul>
+<p>Afterwards, a new post “Hacked” with content “This post was created by a user without content creation priveleges.” can be seen at <code>/wp-admin/edit.php</code> (Admin &gt; “Posts”).</p>
+<p>All variables in <code>DATA</code> can be set to any value that would normally validate.  Additional variables are also supported.</p>
+<h3 id="role_escalation">Role escalation</h3>
+<ul>
+<li><code>ACTION</code>: <code>edit</code></li>
+<li><code>DATA</code>: <code>user_id=${UID}&amp;role=administrator</code></li>
+</ul>
+<p>Afterwards, the specified user is an administrator.</p>
+<p><code>UID</code> must be set to the user ID corresponding to the nonce and cookie.  Additional variables are also supported.</p>
+<h2 id="explanation">Explanation</h2>
+<p>The steps above show just some of many possible exploits of UserPro plugin.  These three examples all exploit <code>function userpro_process_form()</code>.  There are many other exploitable vectors.  Only <code>userpro_process_form()</code> is investigated and explained in this report.</p>
+<p><code>userpro_process_form()</code> is hooked to the <code>wp_ajax_nopriv_userpro_process_form</code> and <code>wp_ajax_userpro_process_form</code> actions.  It checks a nonce to prevent some very basic exploits, then executes the following dangerous code (reformatted):</p>
+<pre><code>extract($_POST);
+foreach ($_POST as $key =&gt; $val) {
+    $key = explode('-', $key);
+    $key = $key[0];
+    $form[$key] = $val;
+}
+extract($form);
+</code></pre><p>This causes all posted values to become local variables in the <code>userpro_process_form()</code> function.  For example, using the cURL template with <code>DATA</code> of <code>a=b&amp;c=d&amp;c-3=e</code> is equivalent to <code>$a = 'b'; $c = 'd';</code> when the first <code>extract()</code> executes, then <code>$a = 'b'; $c = 'e';</code> when the second extract executes.</p>
+<p>Extracting untrusted data is explicitly warned against in <a href="http://www.php.net/manual/en/function.extract.php">the PHP documentation for <code>extract()</code></a>:</p>
+<blockquote><p>Warning: Do not use extract() on untrusted data, like user input (i.e. <code>$_GET</code>, <code>$_FILES</code>, etc.). If you do, for example if you want to run old code that relies on <code>register_globals</code> temporarily, make sure you use one of the non-overwriting flags values such as <code>EXTR_SKIP</code> and be aware that you should extract in the same order that’s defined in <code>variables_order</code> within the <code>php.ini</code>.</p>
+</blockquote>
+<p>To make matters worse;</p>
+<ul>
+<li>This code extracts the untrusted data twice, allowing attackers to pass security validation, while subsequently still manipulating all variables in scope.</li>
+<li>The global variable <code>$userpro</code> can be overwritten.</li>
+<li>Arrays can be specified using the cURL template with data like <code>my_array[key1]=value1&amp;my_array[key2]=value2</code></li>
+<li><code>$form</code> can be overwritten completely.  E.g. <code>form[key1]=value1&amp;form[key2]=value2</code></li>
+<li>Superglobals like <code>$_POST</code> and <code>$_SERVER</code> can probably be overwritten.</li>
+<li>The function is more than 500 lines long, meaning that the affected scope has a very wide range of possible effects.  (Multiple smaller functions would help to limit the severity of the vulnerability be reducing the amount of code using the spoilt scope.)</li>
+</ul>
+<p>A quick review of some of the other 82 uses of <code>extract()</code> in UserPro plugin suggests there are dozens of similarly-dangerous uses of <code>extract()</code>.</p>
+<h2 id="distinct_vulnerabilities">Distinct vulnerabilities</h2>
+<p>The “Delete any user” exploit is technically a distinct security vulnerability, separate from the dangerous <code>extract()</code> calls and the other two example exploits.  It could be addressed independently of the dangerous calls to <code>extract()</code>.</p>
+<p>Specifically, <code>get_userdata($user_id)</code> is equivalent of <code>get_userdata($_POST['user_id'])</code>.  So the solution could be to use <code>global $current_user</code> instead, and remove the <code>user_id</code> from the form.</p>
+<p>However all vulnerabilities discussed in this report should be solved together to minimize fallout from any announcement or security release, since publication of either vulnerability makes all of the others easy to discover.</p>
+  

@@ -1,0 +1,44 @@
+---
+title: "The Writable Web"
+date: Fri Jun 22 2007 00:00:00 GMT+1200 (New Zealand Standard Time)
+---
+
+    <p>There are many varying ideas of what "Web 2.0" 'is'.  I like the notion that "Web 1.0" is the read-only  media-enhanced hyper-linked internet -- where hyperlinks are it's best feature and almost it's foundation -- while "Web 2.0" encompasses the technology that enables media-rich read-write interfaces, on top of everything "Web 1.0" is.  While this "Web 2.0" technology is not new, it has been enhanced enabled and made ready for-the-masses.  Broadband is a significant part in this, particularly for media-rich websites.  Also are javascript and AJAX frameworks and libraries and the development of best practices.</p>
+<p>While media-richness is great and media-distribution websites like YouTube have proven incredibly popular.  However, I believe what people really love about "Web 2.0" is the read-write aspect.  An Internet that you write yourself is highly appealing.  Many websites and CMS have proven this: MySpace, Drupal, Wikipedia, WordPress, blogger, digg, del.icio.us, you know the drill.</p>
+<blockquote style="margin: 1em; float: right; width: 40%;font-size:85%;"><p><span style="font-size:85%;">Okay, so I actually don't like the term "Web 2.0".  It seemed like a good way to start this post a few minutes ago.  But I'm starting to cringe every time I read or write it.  Maybe I'll leave that word to the read-only portions of my webosphere.</span></p></blockquote>
+<p>People like the writable Internet, because people inherently want and like to share, communicate, create and express.  So if people like to write, share and express, and the Internet allows them to do just that, why does my Boss still fire up MS Word to write up a list of form-item descriptions, then save, attach and email?  Why does my girlfriend still use TextEdit.app for her creative writing?</p>
+<p>There are numerous answers;</p>
+<ol>
+<li><span style="font-weight: bold;">Habit</span>.  My Boss hasn't really got his head around yet that Google Docs, GMail, and many other interfaces he uses daily, are better suited to sending me a task brief.  He thinks, "I have to write something --  Word." -- Habit.</li>
+<li><span style="font-weight: bold;">Ownership</span>. Users still have the misconception that they need to retain physical ownership of their data on their own physical hard drive.  They over-exaggerate the 'personal' in Personal Computer. [@todo write about why not to store your data on your computer]</li>
+<li><span style="font-weight: bold;">Education</span>. Users (the not-so-techie ones), don't know about such web technology, or it's advantages.</li>
+<li><span style="font-weight: bold;">Technology</span>.  There are some valid use cases that the Internet is not yet ready for; HD video editing for example.
+</li>
+<li><span style="font-weight: bold;">Interface</span>. I believe the most important reason that users find the writable Web difficult, is that the interfaces to writing the web are slow, and clunky.</li>
+</ol>
+<p>Now let's analyse that. There are two main aspects to this problem;</p>
+<ol>
+<li><span style="font-weight: bold;">Data has to traverse a large complex network.</span>
+<p>That means that there is a significant delay to load web-editing 'programs', save your changes, or load a resource.  This is due in part to latency, but largely the slow transfer speeds that are inherent of such a large busy and complex Internet.  Broadband has enabled the writable and media-rich Internet.  But it has a way to go before it can be compared to transfer speeds and latency in a typical single machine, or even a small optimized network.</p>
+<p>There are software solutions to this.  Cache-ing speeds up a web site or web application once you've already loaded it the first time.  However in web apps, there is a lot of data that simply can not be cached; the unique content in a page, the user's details of data.  There is at least one significant effort towards more advanced 'cache'-ing: Google Gears.  This will allow not only enable offline use of web apps, but significantly speed up their interfaces.  However such a technology needs to be accepted as a standard by the industry for it's success and wide-implementation.  That acceptance is typically a slow process.</p>
+</li>
+<li><span style="font-weight: bold;">Interfaces are not intuitive<br>
+</span><br>
+This is something that I have been thinking about recently.  From what I can see.  There are very few web apps that understand this and handle their Interface accordingly.  In fact the only one I can think of right now is Google Docs and Gmail.</li>
+</ol>
+<p>Let me explain:</p>
+<p>When user John wants to write a document that he will later print, he is used to using MS Word.  To complete his task he clicks the Word icon in his shortcut bar or start menu, Word then loads, and presents him with an image representing a piece of white paper.  John proceeds to <span style="font-weight: bold;">write on the paper</span>.</p>
+<p>When we use the writable internet however, we rarely write on the web-page or even <span style="font-weight: bold;">in the same context</span> as where our finished writing will later be viewed.   For example, I'm writing this text in Blogger's 'Posting' interface, which is part of Blogger's blog-admin interface.  For me that's fine -- I make parts of the internet, and I understand this unintuitive abstraction.  Admittedly I sometimes don't know how my text will look when I've posted it -- but I have faith.</p>
+<p>An extremely bad, but unfortunately common example, are the many interfaces that expect the user to learn a complicated unrelated language, just to to write or edit simple text and formating.  I'm looking at phpBB's  BBcode, mark-down, Wikipedia, and others.  Most of these languages are just abstractions of HTML.  These languages have proven to be popular <span style="font-weight: bold;">only</span> among the types of geeks that write such languages.  Typically in documentation wikis for open source projects.</p>
+<p>Non-technical users coming from desktop apps to webtop apps, <span style="font-weight: bold;">don't have faith</span>.  And rightly so, I might add.  What logical, intuitive or graphical connection does Blogger's posting interface have to the web-page where I and my readers will read this post?  <span style="font-weight: bold;">NONE</span>.  If it wasn't for the fact that I have faith, by having to deal with this block in my workflow previously (and being a web developer), I wouldn't have faith.</p>
+<p>Most CMS and many web apps employ this method of having one interface for editing, and another interface for viewing.  Usually these two interfaces are visually unrelated and with different URIs for each.  Many web apps are like this also.</p>
+<p>Part of the revolution of the writable web however has been allowing inline-editing by means of AJAX technology.  This works, and makes the workflow much quicker and intuitive -- but in most implementations, it's still clunky.</p>
+<p>Google seems to have understood this with Google Docs and Gmail.  Which is ironic, because those are the two most difficult interfaces to contextualize.</p>
+<blockquote style="margin: 1em; float: right; width: 40%;"><p><span style="font-size:85%;">Where will this document be seen?  Paper? PDF?  Google Docs?  Word?</span></p>
+<p>In what visual context does one read an email?</p></blockquote>
+<p>In fact, in these particular cases, Google can only effectively cater for contextualization in the interfaces in which they are created.  However web sites and CMS have a well-defined context (the website itself), and are therefore a good candidate for in-context editing.</p>
+<p>So, you might now ask "Why not integrate <span>in-line editing</span> into writable resources?"</p>
+<p>Many web apps do.  It's usally referred to as AJAX or DHTML.  However many also don't;</p>
+<p>Part of the reason for this is the web standards that drive the internet, and the limitations of the form, input and textarea html and xhtml elements in these standards.  Another reason, particularly for platforms, and standards-driven project like drupal, is the goal to NOT be dependent on javascript.</p>
+<p>Based on all of the above reasoning I therefore propose <span style="font-weight: bold;">in-context editing</span> for writable XHMTL web resources in <a href="http://drupal.geek.nz/2007/06/my-first-drupal-module-proposal.html">my next post</a>.</p>
+  
