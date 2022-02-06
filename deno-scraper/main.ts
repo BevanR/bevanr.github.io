@@ -2,7 +2,7 @@ import { scrape } from './scrape.ts'
 import { createPost } from './hugo.ts'
 
 async function next(nodeId: number) {
-  if (nodeId > 999) {
+  if (nodeId > 271) {
     console.log('Done scraping')
     return
   }

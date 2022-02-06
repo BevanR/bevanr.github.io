@@ -1,6 +1,7 @@
 ---
 title: "Security vulnerabilities in UserPro plugin for WordPress"
 date: Fri May 01 2015 00:00:00 GMT+1200 (New Zealand Standard Time)
+drupalNodeId: 262
 ---
 
     <p><a href="http://codecanyon.net/item/userpro-user-profiles-with-social-login/5958681">UserPro plugin for WordPress</a> versions up to 2.28 have multiple security vulnerabilities that expose the website they are installed on to a wide scope of attack vectors.  The plugin has 27 occurrences a procedure call that is extremely insecure (<code>extract($_POST)</code>) and a futher 57 probably insecure uses of <code>extract()</code>.</p>
