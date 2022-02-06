@@ -1,8 +1,9 @@
 import { DOMParser, Element } from 'https://deno.land/x/deno_dom/deno-dom-wasm.ts'
 
 export interface Post {
+  drupalNodeId: number
   path: string
-  date?: Date
+  date: Date
   title: string
   content: string
 }
@@ -24,8 +25,9 @@ export async function scrape(nodeId: number): Promise<null | Post> {
   const content = wrapper.querySelector('.node > .content')
 
   return {
+    drupalNodeId: nodeId,
     path: new URL(response.url).pathname,
-    date: parseDate(date),
+    date: parseDate(date)!,
     title: title!.innerHTML,
     content: content!.innerHTML,
   }
