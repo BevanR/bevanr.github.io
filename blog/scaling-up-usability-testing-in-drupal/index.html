@@ -1,0 +1,164 @@
+<!doctype html><html dir=ltr lang=en data-theme><head>
+<title>
+JS.geek.NZ
+|
+Scaling Up Usability Testing In Drupal
+</title>
+<meta charset=utf-8><meta name=generator content="Hugo 0.92.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="
+        I'm Bevan Rudge
+
+  I'm a web technologist and software engineer.
+
+  I've been building the web since 2002.
+
+  I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
+
+  I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
+  
+
+
+    ">
+<link rel=stylesheet href=/css/main.min.0a28517cc8cf1577ac08fce9aed49bbe584c350d58aaf61fb13d6cb13792aeb7.css integrity="sha256-CihRfMjPFXesCPzprtSbvlhMNQ1YqvYfsT1ssTeSrrc=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/css/markupHighlight.min.8e4c8f0a940b1596fb4c64d28a00a5ceed671fc303cb65178b4947417da9c674.css integrity="sha256-jkyPCpQLFZb7TGTSigClzu1nH8MDy2UXi0lHQX2pxnQ=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=canonical href=/blog/scaling-up-usability-testing-in-drupal/>
+<script type=text/javascript src=/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus=" crossorigin=anonymous></script>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Scaling Up Usability Testing In Drupal">
+<meta name=twitter:description content="Still not sure why usability testing is important? See what a linux hobbyist found in an informal usability test on Ubuntu. Usability testing (hereafter &#34;UT&#34;) is getting a lot of attention in Drupal -- and rightly so IMHO. If we aim to have &#34;100%&#34; test coverage on Drupal's code and functionality for Drupal 7, it stands to reason we also need test &#34;coverage&#34; on Drupal's usability. If not, it's far too easy for bad interfaces to be developed that pass all the functional and unit tests, but fail miserably in the real world!">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"blog","name":"Scaling Up Usability Testing In Drupal","headline":"Scaling Up Usability Testing In Drupal","alternativeHeadline":"","description":"
+      
+        Still not sure why usability testing is important? See what a linux hobbyist found in an informal usability test on Ubuntu. Usability testing (hereafter \u0022UT\u0022) is getting a lot of attention in Drupal -- and rightly so IMHO. If we aim to have \u0022100%\u0022 test coverage on Drupal\u0027s code and functionality for Drupal 7, it stands to reason we also need test \u0022coverage\u0022 on Drupal\u0027s usability. If not, it\u0027s far too easy for bad interfaces to be developed that pass all the functional and unit tests, but fail miserably in the real world!
+
+
+      
+
+
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/js.geek.nz\/blog\/scaling-up-usability-testing-in-drupal\/"},"author":{"@type":"Person","name":"JS.geek.NZ"},"creator":{"@type":"Person","name":"JS.geek.NZ"},"accountablePerson":{"@type":"Person","name":"JS.geek.NZ"},"copyrightHolder":{"@type":"Person","name":"JS.geek.NZ"},"copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"0001-01-01T00:00:00.00Z","publisher":{"@type":"Organization","name":"JS.geek.NZ","url":"https://js.geek.nz/","logo":{"@type":"ImageObject","url":"https:\/\/js.geek.nz\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/js.geek.nz\/blog\/scaling-up-usability-testing-in-drupal\/","wordCount":"624","genre":[],"keywords":[]}</script>
+</head>
+<body>
+<header><div class="page-top
+.">
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+<nav>
+<ul class=nav__list id=navMenu>
+<div class=nav__links>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/blog/ title>Archive</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/bevanr target=_blank rel="noopener noreferrer" title>LinkedIn ↗</a>
+</li>
+</div>
+<li>
+<a class=theme-switch title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class=wrapper>
+<aside><div class="sidebar
+.">
+<div class=sidebar__content>
+<div class=logo-title>
+<div class=title>
+<img src=/images/profile.jpg alt="profile picture">
+<h3 title><a href=/>JS.geek.NZ</a></h3>
+<div class=description>
+<p> I'm Bevan Rudge<br><br> I'm a web technologist and software engineer.<br><br> I've been building the web since 2002.<br><br> I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.<br><br> I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.<br> </p>
+</div>
+</div>
+</div>
+<ul class=social-links>
+</ul>
+</div><footer class="footer footer--sidebar">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></div>
+</aside>
+<main>
+<div class=autopagerize_page_element>
+<div class=content>
+<div class="post
+.">
+<div class=post-content>
+<div class=post-title>
+<h1>Scaling Up Usability Testing In Drupal</h1>
+<div class=info>
+<em class="fas fa-calendar-day"></em>
+<span class=date>
+1 Jan 0001
+</span>
+<em class="fas fa-stopwatch"></em>
+<span class=reading-time>3-minute read</span>
+</div>
+</div>
+<div style="float:right;width:45%;padding:.5em;margin:.5em 0 .5em .5em;border:1px solid #000;background:#eee"><strong>Still not sure why usability testing is important?</strong> See what a linux hobbyist found in an <a href=http://contentconsumer.wordpress.com/2008/04/27/is-ubuntu-useable-enough-for-my-girlfriend/>informal usability test on Ubuntu</a>.</div>
+<p><strong>Usability testing</strong> (hereafter "<strong>UT</strong>") is getting a lot of attention in <a href=http://drupal.org>Drupal</a> -- and rightly so <acronym title="In My Humble Opinion">IMHO</acronym>. If we aim to have <a href=http://buytaert.net/drupal-7-timeline>"100%" test coverage</a> on Drupal's code and functionality for Drupal 7, it stands to reason we also need test "coverage" on Drupal's usability. If not, it's far too easy for bad interfaces to be developed that pass all the functional and unit tests, but fail miserably in the real world!</p>
+<p><a href=http://drupal.org/user/214218>Jimmy Berry (aka boombatower)</a> of <acronym title="Google Highly-Open Participation [Contest]">GHOP</acronym> fame plans to take the initial (but giant) steps in this direction in the Google Summer of code 2008.</p>
+<div style="float:right;width:45%;padding:0 .5em;margin:.5em 0 .5em .5em;border:1px solid #000;background:#eee">
+<h2><acronym title="Usability Testing">UT</acronym> Jargon:</h2>
+<ul>
+<li>The <strong>software</strong> is what is being tested (e.g. Drupal).</li>
+<li>The <strong>evaluator</strong> is the user using that software (e.g. a random person).</li>
+<li>The <strong>Usability Testing Engineer</strong> (hereafter "<strong>UTE</strong>") is the software developer(s) or other person(s) who design and implement the usability test for the software and the tasks and scenario for the evaluator (e.g. a Drupal developer, a usability professional).</li>
+</ul>
+</div>
+<p><a href=http://groups.drupal.org/node/11011>Jimmy's project</a> is to develop a <strong>Usability Testing Suite</strong> (hereafter "<strong>UTS</strong>") to quickly create "unit tests" for Drupal's usability. The UTS will implement a framework for gathering data from the evaluator's <acronym title="User Experience">UX</acronym> and interactions with Drupal and the web browser.</p>
+<p>The UTS will be limited to relatively informal tests and limited in it's range of data collection, but it will be able to provide wider and more extensive coverage than any other type of <acronym title="Usability Testing">UT</acronym>.</p>
+<div style="float:left;width:45%;padding:.5em .5em 0;margin:.5em .5em .5em 0;border:1px solid #000;background:#eee">
+<a href=http://drop.cwgordon.com/>DROP</a> student <a href=http://drupal.org/user/277624>drpuser</a> made 2 <a href=http://blip.tv/file/852655>great</a> <a href=http://blip.tv/file/852741>videos</a> of his informal <a href=http://drop.cwgordon.com/node/61>UT on Drupal 6' installation</a> <acronym title="User Interface">UI</acronym> that demonstrates the value of informal <acronym title="Usability Testing">UT</acronym>.
+<p> <embed src=http://blip.tv/play/AbS5FgA type=application/x-shockwave-flash width=260 height=185 allowscriptaccess=always allowfullscreen></p>
+<p>The <acronym title="Usability Testing Suite">UTS</acronym> will make this type of informal UT easy to deploy and standardize on a large scale, and allow for split testing, to test <acronym title="User Interface">UI</acronym> ideas and prototypes, and even "regression testing", to ensure usability is not degrading.</p>
+</div>
+<p>The initial version of the <acronym title="Usability Testing Suite">UTS</acronym> will only gather basic data like a Drupal log (e.g. <acronym title="Forms API">FAPI</acronym> events, current uri, timestamps etc.), mouse or click tracking (with the <a href=http://drupal.org/project/click_heatmap>Click Heatmap</a> module, created by Jimmy as a <acronym title="Google Highly Open Participation [Contest]">GHOP</acronym> task) and live feedback by text (like one-way <acronym title="Instant Messaging">IM</acronym>). Future versions will be able to record, collect and analyse more data through UTS' extensible API. Such extensions to UTS could capture screen recordings, static screenshots, camera and microphone recording and more.</p>
+<p>Further, the UTS will be usable for any project built on Drupal. This means that the UTS could be configured to test out any Drupal website or webapp to find out why member-conversion rates are low, what the users' pain points are or why something is difficult to use. And all without the high costs of a UT lab!</p>
+<p>And still further, since the test occurs remotely and not in real-time, the evaluators (users) can be volunteers or real site users, and they can do the evaluating from their regular computer and environment.</p>
+<div style="float:right;width:45%;padding:.5em;margin:.5em 0 .5em .5em;border:1px solid #000;background:#eee">This is not to say informal testing and the UTS are a replacement for formal UT and UT labs. Formal UT and UT labs have other advantages.</div>
+<p>This last point is important. An evaluator in a usability lab can feel uncomfortable with the physical environment, unaccustomed to the hardware or software they have been provided to do the test or even pressured to perform -- as if the evaluator him/herself were being examined (even though steps are taken to avoid this). This can easily skew results and data in formal UT. Informal UT, and especially remote and non-real-time UT can reduce these risks to nearly negligible. This gives clearer and cleaner results.</p>
+<p>I look forward to working with Jimmy as his mentor on the project. Bring it on SoC 2008!</p>
+<p>Cross-posted from <a href=http://www.civicactions.com/blog/bevan_rudge>my blog at CivicActions</a>: <a href=http://www.civicactions.com/blog/scaling_up_usability_testing_in_drupal title=http://www.civicactions.com/blog/scaling_up_usability_testing_in_drupal>http://www.civicactions.com/blog/scaling_up_usability_testing_in_drupal</a></p>
+</div>
+<div class=post-footer>
+<div class=info>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div><footer class="footer footer--base">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></body>
+</html>

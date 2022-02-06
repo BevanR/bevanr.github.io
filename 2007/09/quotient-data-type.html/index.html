@@ -1,0 +1,317 @@
+<!doctype html><html dir=ltr lang=en data-theme><head>
+<title>
+JS.geek.NZ
+|
+Quotient data type
+</title>
+<meta charset=utf-8><meta name=generator content="Hugo 0.92.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="
+        I'm Bevan Rudge
+
+  I'm a web technologist and software engineer.
+
+  I've been building the web since 2002.
+
+  I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
+
+  I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
+  
+
+
+    ">
+<link rel=stylesheet href=/css/main.min.0a28517cc8cf1577ac08fce9aed49bbe584c350d58aaf61fb13d6cb13792aeb7.css integrity="sha256-CihRfMjPFXesCPzprtSbvlhMNQ1YqvYfsT1ssTeSrrc=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/css/markupHighlight.min.8e4c8f0a940b1596fb4c64d28a00a5ceed671fc303cb65178b4947417da9c674.css integrity="sha256-jkyPCpQLFZb7TGTSigClzu1nH8MDy2UXi0lHQX2pxnQ=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=canonical href=/2007/09/quotient-data-type.html/>
+<script type=text/javascript src=/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus=" crossorigin=anonymous></script>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Quotient data type">
+<meta name=twitter:description content="I'm a first year computer science student. The programming paper I'm doing at Massey University is (unfortunately) in C#. And that s the language I'll use in the following examples.From what I've understood about basic data types; an integer is a whole number, with no fraction or decimal value, and doubles and floats are numbers with a decimal value. This works well for most common calculations, but sometimes it is more accurate or convenient to store a value as a fraction; a quotient of two integers.">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"2007","name":"Quotient data type","headline":"Quotient data type","alternativeHeadline":"","description":"
+      
+        I\u0027m a first year computer science student. The programming paper I\u0027m doing at Massey University is (unfortunately) in C#. And that s the language I\u0027ll use in the following examples.From what I\u0027ve understood about basic data types; an integer is a whole number, with no fraction or decimal value, and doubles and floats are numbers with a decimal value. This works well for most common calculations, but sometimes it is more accurate or convenient to store a value as a fraction; a quotient of two integers.
+
+
+      
+
+
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/js.geek.nz\/2007\/09\/quotient-data-type.html\/"},"author":{"@type":"Person","name":"JS.geek.NZ"},"creator":{"@type":"Person","name":"JS.geek.NZ"},"accountablePerson":{"@type":"Person","name":"JS.geek.NZ"},"copyrightHolder":{"@type":"Person","name":"JS.geek.NZ"},"copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"0001-01-01T00:00:00.00Z","publisher":{"@type":"Organization","name":"JS.geek.NZ","url":"https://js.geek.nz/","logo":{"@type":"ImageObject","url":"https:\/\/js.geek.nz\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/js.geek.nz\/2007\/09\/quotient-data-type.html\/","wordCount":"1245","genre":[],"keywords":[]}</script>
+</head>
+<body>
+<header><div class="page-top
+.">
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+<nav>
+<ul class=nav__list id=navMenu>
+<div class=nav__links>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/blog/ title>Archive</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/bevanr target=_blank rel="noopener noreferrer" title>LinkedIn ↗</a>
+</li>
+</div>
+<li>
+<a class=theme-switch title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class=wrapper>
+<aside><div class="sidebar
+.">
+<div class=sidebar__content>
+<div class=logo-title>
+<div class=title>
+<img src=/images/profile.jpg alt="profile picture">
+<h3 title><a href=/>JS.geek.NZ</a></h3>
+<div class=description>
+<p> I'm Bevan Rudge<br><br> I'm a web technologist and software engineer.<br><br> I've been building the web since 2002.<br><br> I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.<br><br> I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.<br> </p>
+</div>
+</div>
+</div>
+<ul class=social-links>
+</ul>
+</div><footer class="footer footer--sidebar">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></div>
+</aside>
+<main>
+<div class=autopagerize_page_element>
+<div class=content>
+<div class="post
+.">
+<div class=post-content>
+<div class=post-title>
+<h1>Quotient data type</h1>
+</div>
+<blockquote>I'm a first year computer science student. The programming paper I'm doing at <a href=http://www.massey.ac.nz/>Massey University</a> is (unfortunately) in C#. And that s the language I'll use in the following examples.</blockquote>From what I've understood about basic data types; an integer is a whole number, with no fraction or decimal value, and doubles and floats are numbers with a decimal value.
+This works well for most common calculations, but sometimes it is more accurate or convenient to store a value as a fraction; a quotient of two integers.
+There seems to be no data type like this in C#. Am I missing something? Looking in the wrong place perhaps? I started writing a C# struct for it. This needs a lot of revision and testing. I remember feeling very tired when I last stopped working on it and not even bothering to write todos, even though I had issues and use cases in mind.
+My testing has been very limited. I have no use for this for now so will probably not work on it for a long time, if ever again. Please let me know if it was useful for you:
+<style type=text/css>pre.textmate-source{margin:0;padding:0 0 0 2px;font-family:Monaco,monospace;font-size:11px;line-height:1.3em;word-wrap:break-word;white-space:pre;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-o-pre-wrap}pre.textmate-source.mac_classic{color:#000;background-color:#fff}pre.textmate-source .linenum{width:75px;padding:.1em 1em .2em 0;color:#888;background-color:#eee}pre.textmate-source.mac_classic span{padding-top:.2em;padding-bottom:.1em}pre.textmate-source.mac_classic ::selection{background-color:#c3dcff}pre.textmate-source.mac_classic .comment{color:#5dd9fb;font-style:italic}pre.textmate-source.mac_classic .keyword,pre.textmate-source.mac_classic .storage{color:#00f;font-weight:700}pre.textmate-source.mac_classic .constant_numeric{color:#0000cd}pre.textmate-source.mac_classic .constant{color:#c5060b;font-weight:700}pre.textmate-source.mac_classic .constant_language{color:#585cf6;font-weight:700}pre.textmate-source.mac_classic .variable_language,pre.textmate-source.mac_classic .variable_other{color:#318495}pre.textmate-source.mac_classic .string{color:#036a07}pre.textmate-source.mac_classic .constant_character_escape,pre.textmate-source.mac_classic .string .source{color:#26b31a}pre.textmate-source.mac_classic .meta_preprocessor{color:#1a921c}pre.textmate-source.mac_classic .keyword_control_import{color:#0c450d;font-weight:700}pre.textmate-source.mac_classic .entity_name_function,pre.textmate-source.mac_classic .keyword_other_name-of-parameter_objc{color:#0000a2;font-weight:700}pre.textmate-source.mac_classic .entity_name_type{text-decoration:underline}pre.textmate-source.mac_classic .entity_other_inherited-class{font-style:italic}pre.textmate-source.mac_classic .variable_parameter{font-style:italic}pre.textmate-source.mac_classic .storage_type_method{color:#70727e}pre.textmate-source.mac_classic .meta_section .entity_name_section,pre.textmate-source.mac_classic .declaration_section .entity_name_section{font-style:italic}pre.textmate-source.mac_classic .support_function{color:#3c4c72;font-weight:700}pre.textmate-source.mac_classic .support_class,pre.textmate-source.mac_classic .support_type{color:#6d79de;font-weight:700}pre.textmate-source.mac_classic .support_constant{color:#06960e;font-weight:700}pre.textmate-source.mac_classic .support_variable{color:#21439c;font-weight:700}pre.textmate-source.mac_classic .keyword_operator_js{color:#687687}pre.textmate-source.mac_classic .invalid{color:#fff;background-color:#900}pre.textmate-source.mac_classic .invalid_deprecated_trailing-whitespace{background-color:#ffd0d0}pre.textmate-source.mac_classic .text .source,pre.textmate-source.mac_classic .string_unquoted{background-color:rgba(66,127,245,.19)}pre.textmate-source.mac_classic .meta_tag_preprocessor_xml{color:#68685b}pre.textmate-source.mac_classic .meta_tag_sgml_doctype,pre.textmate-source.mac_classic .meta_tag_sgml_doctype .entity,pre.textmate-source.mac_classic .meta_tag_sgml_doctype .string,pre.textmate-source.mac_classic .meta_tag_preprocessor_xml,pre.textmate-source.mac_classic .meta_tag_preprocessor_xml .entity,pre.textmate-source.mac_classic .meta_tag_preprocessor_xml .string{color:#888}pre.textmate-source.mac_classic .string_quoted_docinfo_doctype_DTD{font-style:italic}pre.textmate-source.mac_classic .meta_tag,pre.textmate-source.mac_classic .declaration_tag{color:#1c02ff}pre.textmate-source.mac_classic .entity_name_tag{font-weight:700}pre.textmate-source.mac_classic .entity_other_attribute-name{font-style:italic}pre.textmate-source.mac_classic .markup_heading{color:#0c07ff;font-weight:700}pre.textmate-source.mac_classic .markup_quote{color:#000;font-style:italic}pre.textmate-source.mac_classic .markup_list{color:#b90690}</style>
+<pre class="textmate-source mac_classic"><span class="source source_c-sharp"><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ A quotient of two integers.  Commonly referred to as a fraction or rational number.
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Strings formats contain one '/' character between two integers, e.g "2/3". 
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Throws InvalidFractionException if the constructor is called with a badly formatted string.
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Throws ZeroDenominatorException if denominator is set to zero.
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span><span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">struct</span> Quotient
+{
+   <span class="storage storage_type storage_type_c#">int</span> numerator;
+   <span class="storage storage_type storage_type_c#">int</span> denominator;
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Set a quotient by passing integer values for numerator and denominator.
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;param name="Numerator"&gt;Numerator&lt;/param&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;param name="Denominator"&gt;Denominator&lt;/param&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> Quotient(<span class="storage storage_type storage_type_c#">int</span> Numerator, <span class="storage storage_type storage_type_c#">int</span> Denominator)
+   {
+       numerator = Numerator;
+       denominator = Denominator;
+       checkDenominator();
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Set a quotient by passing a string containing the '/' character. e.g. "3/4".
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Also accepts integers in string format without the '/' character, by setting the denominator to 1. e.g. "5" sets numerator = 5 and denominator = 1.
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;param name="Fraction"&gt;A rational number as a fraction in string format&lt;/param&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> Quotient(<span class="storage storage_type storage_type_c#">string</span> Fraction)
+   {
+       <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> Split the parameter into smaller parts
+</span>        <span class="storage storage_type storage_type_c#">char</span>[] separator = { <span class="string string_quoted string_quoted_single string_quoted_single_c#"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_c#">'</span>/<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_c#">'</span></span> };
+       <span class="storage storage_type storage_type_c#">string</span>[] parts = Fraction.Split(separator);
+
+       <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> We can only handle this if there are either one or two parts
+</span>        <span class="keyword keyword_control keyword_control_c#">if</span> (parts.Length == <span class="constant constant_numeric constant_numeric_c#">2</span> || parts.Length == <span class="constant constant_numeric constant_numeric_c#">1</span>)
+           <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> Fall through to default exception if part is not integer
+</span>            numerator = Convert.ToInt32(parts[<span class="constant constant_numeric constant_numeric_c#">0</span>].Trim());
+       <span class="keyword keyword_control keyword_control_c#">else</span>
+           <span class="keyword keyword_control keyword_control_c#">throw</span> <span class="keyword keyword_control keyword_control_c#">new</span> InvalidFractionException(Fraction);
+
+       <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> If a denominator was specified, set it.  Else set denominator to 1.
+</span>        <span class="keyword keyword_control keyword_control_c#">if</span> (parts.Length == <span class="constant constant_numeric constant_numeric_c#">2</span>)
+           denominator = Convert.ToInt32(parts[<span class="constant constant_numeric constant_numeric_c#">1</span>].Trim());
+       <span class="keyword keyword_control keyword_control_c#">else</span>
+           denominator = <span class="constant constant_numeric constant_numeric_c#">1</span>;
+
+       checkDenominator();
+   }
+
+   <span class="keyword keyword_control keyword_control_c#">public</span> <span class="keyword keyword_control keyword_control_c#">override</span> <span class="storage storage_type storage_type_c#">string</span> ToString()
+   {
+       <span class="keyword keyword_control keyword_control_c#">return</span> numerator + <span class="string string_quoted string_quoted_double string_quoted_double_c#"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_c#">"</span>/<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_c#">"</span></span> + denominator;
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Convert the Quotient to a float
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;returns&gt;The numeric value as a float&lt;/returns&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">float</span> ToFloat()
+   {
+       <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> Convert each to a float before performing division.
+</span>        <span class="keyword keyword_control keyword_control_c#">return</span> (<span class="storage storage_type storage_type_c#">float</span>)numerator / (<span class="storage storage_type storage_type_c#">float</span>)denominator;
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Round the Quotient to the nearest integer
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;returns&gt;Rounded value as Integer&lt;/returns&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">int</span> ToInt32()
+   {
+       <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> Add 0.5 for rounding
+</span>        <span class="keyword keyword_control keyword_control_c#">return</span> (<span class="storage storage_type storage_type_c#">int</span>)(<span class="keyword keyword_control keyword_control_c#">this</span>.ToFloat() + <span class="constant constant_numeric constant_numeric_c#">0.5</span>);
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Convert the Quotient to a double
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;returns&gt;The numeric value as a double&lt;/returns&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">double</span> ToDouble()
+   {
+       <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span> Convert each to a doubler before performing division.
+</span>        <span class="keyword keyword_control keyword_control_c#">return</span> (<span class="storage storage_type storage_type_c#">double</span>)numerator / (<span class="storage storage_type storage_type_c#">double</span>)denominator;
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ The numerator of the Quotient
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">int</span> Numerator
+   {
+       get
+       {
+           <span class="keyword keyword_control keyword_control_c#">return</span> numerator;
+       }
+       set
+       {
+           numerator = value;
+       }
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ The Denominator of the Quotient
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">int</span> Denominator
+   {
+       get
+       {
+           <span class="keyword keyword_control keyword_control_c#">return</span> denominator;
+       }
+       set
+       {
+           denominator = value;
+           checkDenominator();
+       }
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Checks that the denominator is a valid value (not zero).  Throws ZeroDenominatorException if denominator is zero.
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;returns&gt;&lt;/returns&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">private</span> <span class="storage storage_type storage_type_c#">bool</span> checkDenominator()
+   {
+       <span class="keyword keyword_control keyword_control_c#">if</span> (denominator == <span class="constant constant_numeric constant_numeric_c#">0</span>)
+           <span class="keyword keyword_control keyword_control_c#">throw</span> <span class="keyword keyword_control keyword_control_c#">new</span> ZeroDenominatorException(numerator);
+       <span class="keyword keyword_control keyword_control_c#">return</span> <span class="keyword keyword_control keyword_control_c#">true</span>;
+   }
+}
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ The value passed into Quotient.Quotient(string Fraction) is invalid.
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span><span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">class</span> InvalidFractionException : Exception
+{
+   <span class="storage storage_type storage_type_c#">string</span> fraction;
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ Constructor for InvalidFractionException
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;param name="Fraction"&gt;The string that should represent a fraction.&lt;/param&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> InvalidFractionException(<span class="storage storage_type storage_type_c#">string</span> Fraction)
+   {
+       fraction = Fraction;
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ The string that should represent a fraction but does not.
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">string</span> Fraction
+   {
+       get
+       {
+           <span class="keyword keyword_control keyword_control_c#">return</span> fraction;
+       }
+   }
+}
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ The value of the denominator of a Quotient must not be zero.
+</span><span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span><span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">class</span> ZeroDenominatorException : Exception {
+   <span class="storage storage_type storage_type_c#">int</span> numerator;
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ constructor for ZeroDenominatorException
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;param name="Numerator"&gt;The numerator of the quotient&lt;/param&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> ZeroDenominatorException(<span class="storage storage_type storage_type_c#">int</span> Numerator) {
+       numerator = Numerator;
+   }
+
+   <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;summary&gt;
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ The numerator of the quotient
+</span>    <span class="comment comment_line comment_line_double-slash comment_line_double-slash_c#"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_c#">//</span>/ &lt;/summary&gt;
+</span>    <span class="keyword keyword_control keyword_control_c#">public</span> <span class="storage storage_type storage_type_c#">int</span> Numerator {
+       get
+       {
+           <span class="keyword keyword_control keyword_control_c#">return</span> numerator;
+       }
+   }
+}
+</span></pre>
+</div>
+<div class=post-footer>
+<div class=info>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div><footer class="footer footer--base">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></body>
+</html>

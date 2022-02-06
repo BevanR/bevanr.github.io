@@ -1,0 +1,154 @@
+<!doctype html><html dir=ltr lang=en data-theme><head>
+<title>
+JS.geek.NZ
+|
+iTerm Upgrade Loses Preferences &amp;amp; Bookmarks
+</title>
+<meta charset=utf-8><meta name=generator content="Hugo 0.92.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="
+        I'm Bevan Rudge
+
+  I'm a web technologist and software engineer.
+
+  I've been building the web since 2002.
+
+  I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
+
+  I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
+  
+
+
+    ">
+<link rel=stylesheet href=/css/main.min.0a28517cc8cf1577ac08fce9aed49bbe584c350d58aaf61fb13d6cb13792aeb7.css integrity="sha256-CihRfMjPFXesCPzprtSbvlhMNQ1YqvYfsT1ssTeSrrc=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/css/markupHighlight.min.8e4c8f0a940b1596fb4c64d28a00a5ceed671fc303cb65178b4947417da9c674.css integrity="sha256-jkyPCpQLFZb7TGTSigClzu1nH8MDy2UXi0lHQX2pxnQ=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=canonical href=/blog/iterm-upgrade-loses-preferences-bookmarks/>
+<script type=text/javascript src=/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus=" crossorigin=anonymous></script>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="iTerm Upgrade Loses Preferences &amp;amp; Bookmarks">
+<meta name=twitter:description content="UPDATE: iTerm version 0.9.5.0821 has been released which is intended to fix this. I haven't tested it.
+I just upgraded to iTerm version 0.9.5.0820 from 0.9.5.0611 on Mac OS X Leopard, and found that iTerm had forgotten or lost all of my preferences and bookmarks.
+I fixed it by;
+ quitting iTerm going to ~/Library/Preferences/ moving net.sourceforge.iTerm.plist to net.sourceforge.iTerm.plist~ copying iTerm.plist to net.sourceforge.iTerm.plist starting iTerm  See larger image">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"blog","name":"iTerm Upgrade Loses Preferences \u0026amp; Bookmarks","headline":"iTerm Upgrade Loses Preferences \u0026amp; Bookmarks","alternativeHeadline":"","description":"
+      
+        UPDATE: iTerm version 0.9.5.0821 has been released which is intended to fix this. I haven\u0027t tested it.\nI just upgraded to iTerm version 0.9.5.0820 from 0.9.5.0611 on Mac OS X Leopard, and found that iTerm had forgotten or lost all of my preferences and bookmarks.\nI fixed it by;\n quitting iTerm going to ~\/Library\/Preferences\/ moving net.sourceforge.iTerm.plist to net.sourceforge.iTerm.plist~ copying iTerm.plist to net.sourceforge.iTerm.plist starting iTerm  See larger image
+
+
+      
+
+
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/js.geek.nz\/blog\/iterm-upgrade-loses-preferences-bookmarks\/"},"author":{"@type":"Person","name":"JS.geek.NZ"},"creator":{"@type":"Person","name":"JS.geek.NZ"},"accountablePerson":{"@type":"Person","name":"JS.geek.NZ"},"copyrightHolder":{"@type":"Person","name":"JS.geek.NZ"},"copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"0001-01-01T00:00:00.00Z","publisher":{"@type":"Organization","name":"JS.geek.NZ","url":"https://js.geek.nz/","logo":{"@type":"ImageObject","url":"https:\/\/js.geek.nz\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/js.geek.nz\/blog\/iterm-upgrade-loses-preferences-bookmarks\/","wordCount":"67","genre":[],"keywords":[]}</script>
+</head>
+<body>
+<header><div class="page-top
+.">
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+<nav>
+<ul class=nav__list id=navMenu>
+<div class=nav__links>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/blog/ title>Archive</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/bevanr target=_blank rel="noopener noreferrer" title>LinkedIn ↗</a>
+</li>
+</div>
+<li>
+<a class=theme-switch title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class=wrapper>
+<aside><div class="sidebar
+.">
+<div class=sidebar__content>
+<div class=logo-title>
+<div class=title>
+<img src=/images/profile.jpg alt="profile picture">
+<h3 title><a href=/>JS.geek.NZ</a></h3>
+<div class=description>
+<p> I'm Bevan Rudge<br><br> I'm a web technologist and software engineer.<br><br> I've been building the web since 2002.<br><br> I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.<br><br> I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.<br> </p>
+</div>
+</div>
+</div>
+<ul class=social-links>
+</ul>
+</div><footer class="footer footer--sidebar">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></div>
+</aside>
+<main>
+<div class=autopagerize_page_element>
+<div class=content>
+<div class="post
+.">
+<div class=post-content>
+<div class=post-title>
+<h1>iTerm Upgrade Loses Preferences &amp;amp; Bookmarks</h1>
+<div class=info>
+<em class="fas fa-calendar-day"></em>
+<span class=date>
+1 Jan 0001
+</span>
+<em class="fas fa-stopwatch"></em>
+<span class=reading-time>One-minute read</span>
+</div>
+</div>
+<p><strong>UPDATE</strong>: iTerm version 0.9.5.0821 has been released which is intended to fix this. I haven't tested it.</p>
+<p>I just upgraded to <a href=http://iterm.sourceforge.net/>iTerm</a> version 0.9.5.0820 from 0.9.5.0611 on Mac OS X Leopard, and found that iTerm had forgotten or lost all of my preferences and bookmarks.</p>
+<p>I fixed it by;</p>
+<ol>
+<li>quitting iTerm</li>
+<li>going to <code>~/Library/Preferences/</code></li>
+<li>moving <code>net.sourceforge.iTerm.plist</code> to <code>net.sourceforge.iTerm.plist~</code></li>
+<li>copying <code>iTerm.plist</code> to <code>net.sourceforge.iTerm.plist</code></li>
+<li>starting iTerm</li>
+</ol>
+<p><a href=http://drupal.geek.nz/sites/default/files/Preferences.png title="Click to see the fullsize image">See larger image<br>
+<img src=http://drupal.geek.nz/sites/default/files/Preferences.png alt="screenshot of the location of the two files in finder" width=400></a></p>
+</div>
+<div class=post-footer>
+<div class=info>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div><footer class="footer footer--base">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></body>
+</html>

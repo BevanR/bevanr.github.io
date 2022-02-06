@@ -1,0 +1,163 @@
+<!doctype html><html dir=ltr lang=en data-theme><head>
+<title>
+JS.geek.NZ
+|
+Drupal Success; What Would Drupal Do?
+</title>
+<meta charset=utf-8><meta name=generator content="Hugo 0.92.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="
+        I'm Bevan Rudge
+
+  I'm a web technologist and software engineer.
+
+  I've been building the web since 2002.
+
+  I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
+
+  I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
+  
+
+
+    ">
+<link rel=stylesheet href=/css/main.min.0a28517cc8cf1577ac08fce9aed49bbe584c350d58aaf61fb13d6cb13792aeb7.css integrity="sha256-CihRfMjPFXesCPzprtSbvlhMNQ1YqvYfsT1ssTeSrrc=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/css/markupHighlight.min.8e4c8f0a940b1596fb4c64d28a00a5ceed671fc303cb65178b4947417da9c674.css integrity="sha256-jkyPCpQLFZb7TGTSigClzu1nH8MDy2UXi0lHQX2pxnQ=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=canonical href=/blog/drupal-success-what-would-drupal-do/>
+<script type=text/javascript src=/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus=" crossorigin=anonymous></script>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Drupal Success;  What Would Drupal Do?">
+<meta name=twitter:description content="Now that I have been a full-time Drupal Developer for a couple of years, and a part-time Drupal developer for a year before that, I am beginning to recognize recurring patterns and problems in Drupal projects and people's experiences with Drupal. This is a report on my experiences, and a summary of learned lessons and recommendations for those entertaining the idea of a financially-driven Drupal project. Executive Summary  Don't undertake a Drupal project without, at the very least, someone on the team or available to the team, to check solutions are architected the Drupal way, monitor development for employment of good practices, look for learning opportunities for the less-experienced Drupal developers on the team, and be available in a timely manner to answer the question What would Drupal do?">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"blog","name":"Drupal Success;  What Would Drupal Do?","headline":"Drupal Success;  What Would Drupal Do?","alternativeHeadline":"","description":"
+      
+        Now that I have been a full-time Drupal Developer for a couple of years, and a part-time Drupal developer for a year before that, I am beginning to recognize recurring patterns and problems in Drupal projects and people\u0027s experiences with Drupal. This is a report on my experiences, and a summary of learned lessons and recommendations for those entertaining the idea of a financially-driven Drupal project. Executive Summary  Don\u0027t undertake a Drupal project without, at the very least, someone on the team or available to the team, to check solutions are architected the Drupal way, monitor development for employment of good practices, look for learning opportunities for the less-experienced Drupal developers on the team, and be available in a timely manner to answer the question What would Drupal do?
+
+
+      
+
+
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/js.geek.nz\/blog\/drupal-success-what-would-drupal-do\/"},"author":{"@type":"Person","name":"JS.geek.NZ"},"creator":{"@type":"Person","name":"JS.geek.NZ"},"accountablePerson":{"@type":"Person","name":"JS.geek.NZ"},"copyrightHolder":{"@type":"Person","name":"JS.geek.NZ"},"copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"0001-01-01T00:00:00.00Z","publisher":{"@type":"Organization","name":"JS.geek.NZ","url":"https://js.geek.nz/","logo":{"@type":"ImageObject","url":"https:\/\/js.geek.nz\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/js.geek.nz\/blog\/drupal-success-what-would-drupal-do\/","wordCount":"824","genre":[],"keywords":[]}</script>
+</head>
+<body>
+<header><div class="page-top
+.">
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+<nav>
+<ul class=nav__list id=navMenu>
+<div class=nav__links>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/blog/ title>Archive</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/bevanr target=_blank rel="noopener noreferrer" title>LinkedIn ↗</a>
+</li>
+</div>
+<li>
+<a class=theme-switch title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class=wrapper>
+<aside><div class="sidebar
+.">
+<div class=sidebar__content>
+<div class=logo-title>
+<div class=title>
+<img src=/images/profile.jpg alt="profile picture">
+<h3 title><a href=/>JS.geek.NZ</a></h3>
+<div class=description>
+<p> I'm Bevan Rudge<br><br> I'm a web technologist and software engineer.<br><br> I've been building the web since 2002.<br><br> I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.<br><br> I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.<br> </p>
+</div>
+</div>
+</div>
+<ul class=social-links>
+</ul>
+</div><footer class="footer footer--sidebar">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></div>
+</aside>
+<main>
+<div class=autopagerize_page_element>
+<div class=content>
+<div class="post
+.">
+<div class=post-content>
+<div class=post-title>
+<h1>Drupal Success; What Would Drupal Do?</h1>
+<div class=info>
+<em class="fas fa-calendar-day"></em>
+<span class=date>
+1 Jan 0001
+</span>
+<em class="fas fa-stopwatch"></em>
+<span class=reading-time>4-minute read</span>
+</div>
+</div>
+<img src=http://groups.drupal.org/files/drupal-crane.jpg align=right><strong>Now that I have been a full-time Drupal Developer for a couple of years, and a part-time Drupal developer for a year before that, I am beginning to recognize recurring patterns and problems in Drupal projects and people's experiences with Drupal. This is a report on my experiences, and a summary of learned lessons and recommendations for those entertaining the idea of a financially-driven Drupal project.</strong>
+<h2>Executive Summary</h2>
+<ol>
+<li>Don't undertake a Drupal project without, at the very least, someone on the team or available to the team, to check solutions are architected the Drupal way, monitor development for employment of good practices, look for learning opportunities for the less-experienced Drupal developers on the team, and be available in a timely manner to answer the question <strong>What would Drupal do?</strong>.</li>
+<li>Don't underestimate the cost of learning Drupal. It is almost always greater than the difference in price between experienced and inexperienced Drupal shops or developers.</li>
+<li>If you do <em>not</em> have an experienced Drupaler on your project's team, expect it to go several times over budget, and/or be under-delivered. Most of the time it will be cheaper to have the developers use the tool they already know.</li>
+</ol>
+<h2>Introduction</h2>
+<p>As more and more people discover and decide to use Drupal, the more and more popular it becomes. Given the way a crowd-attracts-a-crowd, especially with free and open source software, Drupal is quite clearly set to become the dominant open source web <acronym title="Content Management System">CMS</acronym> in the professional and business-oriented web-development markets – if not the dominant CMS of both open source and proprietary options. It's also likely that Drupal will dominate in the amateur and hobbyiest markets too, when usability bugs get ironed out with a little more time and a couple more Drupal versions.</p>
+<p>Many non-Drupal web development shops are recognizing this, and are beginning to realize that it's too expensive to maintain their own proprietary CMS, or – worse – maintain skills in multiple different CMS, when one could rule them all, and even do a better job.</p>
+<h2>The Problem</h2>
+<p>Businesses and individuals seeking websites also recognize this. In fact, many clients looking for a web shop have already decided they want their website to use Drupal. Instead of shopping for a general solution provider, they often look for a Drupal developer or Drupal shop.</p>
+<p>I have seen this many times now, always with one of the two following results;</p>
+<ul>
+<li>They find an experienced Drupal developer, recognize the value and importance of siad Drupal developer's experience and role in the project, and get them involved.</li>
+<li>They don't find (or find, but can't afford) a Drupal developer or shop, fail to recognize the importance of this, and contract web developer or web shop with little or no experience.</li>
+</ul>
+<p>Unfortunately – because of the high demand for experienced Drupalers – most end up in the last category. This is understandable, given that most clients seeking someone to build their website do so because they lack the expertise to do it themselves – they are therefore not likely to understand that – even with software, including Drupal – a tool is only as useful as the skills and experience of it's user.</p>
+<p>This always – with no exception – ends up leaving the developers running frustratedly in circles, and the client burned with an under-delivered and over-budget product.</p>
+<p>I have seen a number of non-Drupal web development shops talked in to using Drupal for the project because it was what the client wanted. The developers or shop often tell clients that "Drupal is a PHP application, and we're a PHP shop, so we can do Drupal". Even the developers often fail to recognize that Drupal is worthless to them until they have learned "the Drupal way", have experience with Drupal, have become self-dependent Drupal learners and can confidently answer the question <strong>What would Drupal do?</strong>. For most web development shops this is a significant amount of resources to commit. In fact for most run-of-the-mill shops, which are typically small businesses of 5-15 persons, it's too-large an investment.</p>
+<h2>The Solution</h2>
+<p>And indeed it is a large investment – after working full time with Drupal for a couple of years now, I'm still learning new things about Drupal just about daily. And there is no possible way any person or even small group of people can recall, understand and know how to use even half of the <a href=http://cvs.drupal.org/viewvc.py/drupal/contributions/modules/>almost-4000 contributed modules</a>.</p>
+<p>The solution is to develop mentoring relationships. Every Drupal project needs at least one person who is sufficiently experienced with Drupal such that he or she can guide other developers through the project, showing them <strong>what Drupal would do</strong>. Finding this mentor or Drupal developer is key to the success of any Drupal project with any non-trivial amount of configuration and code.</p>
+<p>It is the responsibility of project stakeholders to find these people. It is also the responsibility of web developers to avail themselves in a mentoring capacity to less-experienced Drupal developers.</p>
+</div>
+<div class=post-footer>
+<div class=info>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div><footer class="footer footer--base">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></body>
+</html>

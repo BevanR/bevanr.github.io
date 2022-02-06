@@ -1,0 +1,163 @@
+<!doctype html><html dir=ltr lang=en data-theme><head>
+<title>
+JS.geek.NZ
+|
+Scheduled Publishing with Workbench Moderation
+</title>
+<meta charset=utf-8><meta name=generator content="Hugo 0.92.1"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="
+        I'm Bevan Rudge
+
+  I'm a web technologist and software engineer.
+
+  I've been building the web since 2002.
+
+  I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.
+
+  I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.
+  
+
+
+    ">
+<link rel=stylesheet href=/css/main.min.0a28517cc8cf1577ac08fce9aed49bbe584c350d58aaf61fb13d6cb13792aeb7.css integrity="sha256-CihRfMjPFXesCPzprtSbvlhMNQ1YqvYfsT1ssTeSrrc=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=/css/markupHighlight.min.8e4c8f0a940b1596fb4c64d28a00a5ceed671fc303cb65178b4947417da9c674.css integrity="sha256-jkyPCpQLFZb7TGTSigClzu1nH8MDy2UXi0lHQX2pxnQ=" crossorigin=anonymous type=text/css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=canonical href=/blog/scheduled-publishing-workbench-moderation/>
+<script type=text/javascript src=/js/anatole-header.min.2a2cd9614b7d007dfbb75e8da19e3a0fa872ceab53c6d000c00b7a0c89b85bfc.js integrity="sha256-KizZYUt9AH37t16NoZ46D6hyzqtTxtAAwAt6DIm4W/w=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus=" crossorigin=anonymous></script>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Scheduled Publishing with Workbench Moderation">
+<meta name=twitter:description content="Originally posted at PreviousNext.com.au.
+Scheduler module allows content editors to specify times for content to be published and/or unpublished. However it is not compatible with Workbench Moderation module, which allows content to have states like “draft” and “needs review” rather than just “published” or not.
+Scheduler Workbench is a new module that integrates Workbench Moderation and Scheduler modules, so that content can be configured to become published or unpublished and be assigned a new moderation state at a date and time specified by the content editor.">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"blog","name":"Scheduled Publishing with Workbench Moderation","headline":"Scheduled Publishing with Workbench Moderation","alternativeHeadline":"","description":"
+      
+        Originally posted at PreviousNext.com.au.\nScheduler module allows content editors to specify times for content to be published and\/or unpublished. However it is not compatible with Workbench Moderation module, which allows content to have states like “draft” and “needs review” rather than just “published” or not.\nScheduler Workbench is a new module that integrates Workbench Moderation and Scheduler modules, so that content can be configured to become published or unpublished and be assigned a new moderation state at a date and time specified by the content editor.
+
+
+      
+
+
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/js.geek.nz\/blog\/scheduled-publishing-workbench-moderation\/"},"author":{"@type":"Person","name":"JS.geek.NZ"},"creator":{"@type":"Person","name":"JS.geek.NZ"},"accountablePerson":{"@type":"Person","name":"JS.geek.NZ"},"copyrightHolder":{"@type":"Person","name":"JS.geek.NZ"},"copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"0001-01-01T00:00:00.00Z","publisher":{"@type":"Organization","name":"JS.geek.NZ","url":"https://js.geek.nz/","logo":{"@type":"ImageObject","url":"https:\/\/js.geek.nz\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/js.geek.nz\/blog\/scheduled-publishing-workbench-moderation\/","wordCount":"771","genre":[],"keywords":[]}</script>
+</head>
+<body>
+<header><div class="page-top
+.">
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+<nav>
+<ul class=nav__list id=navMenu>
+<div class=nav__links>
+<li>
+<a href=/ title>Home</a>
+</li>
+<li>
+<a href=/blog/ title>Archive</a>
+</li>
+<li>
+<a href=https://www.linkedin.com/in/bevanr target=_blank rel="noopener noreferrer" title>LinkedIn ↗</a>
+</li>
+</div>
+<li>
+<a class=theme-switch title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class=wrapper>
+<aside><div class="sidebar
+.">
+<div class=sidebar__content>
+<div class=logo-title>
+<div class=title>
+<img src=/images/profile.jpg alt="profile picture">
+<h3 title><a href=/>JS.geek.NZ</a></h3>
+<div class=description>
+<p> I'm Bevan Rudge<br><br> I'm a web technologist and software engineer.<br><br> I've been building the web since 2002.<br><br> I am most satisfied when I solve problems through engineering, share my skills by mentoring, and craft beautiful experiences for my other people.<br><br> I have expert skills in ECMAScript (JavaScript), TypeScript and Vue. I am also skilled with SQL, Python, Golang, PHP and more.<br> </p>
+</div>
+</div>
+</div>
+<ul class=social-links>
+</ul>
+</div><footer class="footer footer--sidebar">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></div>
+</aside>
+<main>
+<div class=autopagerize_page_element>
+<div class=content>
+<div class="post
+.">
+<div class=post-content>
+<div class=post-title>
+<h1>Scheduled Publishing with Workbench Moderation</h1>
+<div class=info>
+<em class="fas fa-calendar-day"></em>
+<span class=date>
+1 Jan 0001
+</span>
+<em class="fas fa-stopwatch"></em>
+<span class=reading-time>4-minute read</span>
+</div>
+</div>
+<p>Originally posted at <a href=http://previousnext.com.au/blog/scheduled-publishing-workbench-moderation>PreviousNext.com.au</a>.</p>
+<p>Scheduler module allows content editors to specify times for content to be published and/or unpublished. However it is not compatible with Workbench Moderation module, which allows content to have states like “<em>draft</em>” and “<em>needs review</em>” rather than just “<em>published</em>” or not.</p>
+<p><a href=http://drupal.org/project/scheduler_workbench>Scheduler Workbench</a> is a new module that integrates <a href=http://drupal.org/project/workbench_moderation>Workbench Moderation</a> and <a href=http://drupal.org/project/scheduler>Scheduler</a> modules, so that content can be configured to become published or unpublished and be assigned a new moderation state at a date and time specified by the content editor.</p>
+<p>PreviousNext recently built the same functionality for a client project using <a href=http://drupal.org/project/rules>Rules & Rules Scheduler</a> modules. This proved rather difficult to implement; Workbench Moderation also allows content with a published revision to have a more recent current revision in a “<em>draft</em>” or “<em>review</em>” state while content editors are working on it, and Rules does not provide sufficient transparency to easily understand & debug a number of tricky edge cases:</p>
+<ul>
+<li>If a content item is scheduled to be published but it already has a published revision, the current revision should become the published revision on the scheduled publishing date.</li>
+<li>The content’s Workbench Moderation history should be clean and easy to audit; There should only be one log entry per scheduled event.</li>
+<li>Should the (un)publishing-dates act on revisions or nodes? Should the date-time values be stored per revision or per node? If revisions, do the published revision's dates preside over the current revision's dates? Can content that is about to be (un)published still be easily exposed to content managers via the Views module and ordered by the date-time of the scheduled event?</li>
+<li>Should scheduled dates be removed from the content at or after processing? At exactly which point in the process? How can an audit trail of executed scheduled (un)publishing be provided?</li>
+<li>If both publish and unpublish scheduled events get executed on the same cron run—perhaps because an editor scheduled them very close together and/or cron has not been running for a while or is not frequent enough—does the content end up being unpublished? Workbench Moderation calls <code>node_save()</code> content with a published revision in an "asynchronous" <code>drupal_register_shutdown_function()</code>-callback, which makes this a rather difficult edge case to handle. Additionally;</li>
+<li>Workbench Moderation's node-history table should always be consistent with with the node table; Only nodes that have <code>node.status = 1</code> should have a row in <code>workbench_moderation_node_history</code> where <code>published = 1</code> and vice versa. And <code>workbench_moderation_node_history</code> should only have one row where <code>current = 1</code>. And that should refer to the most recent revision.</li>
+<li>Should an editor be able to scheduled already-published content to become unpublished for a specified period? Or only the opposite?</li>
+<li>If content is manually (un)published before a scheduled (un)publishing, are the respective scheduled events ignored on cron?</li>
+</ul>
+<p>The list goes on.</p>
+<p>For a more recent project we found Scheduler Workbench module much easier to work with than a Rules-based implementation, since all of the functionality is clearly defined in unambiguous code, rather than abstracted through configuration.</p>
+<p><a href="http://drupal.org/project/issues/search/scheduler_workbench?submitted=Bevan">PreviousNext contributed several patches to the module</a> to fix some bugs, handle some of the edge cases and generally get the module more stable. All of these patches have been committed upstream already—thanks <a href=http://drupal.org/user/654480>William Hurley (whurleyf1)</a>!</p>
+<p>Another <a href=http://drupal.org/node/1660192>patch for Scheduler is still in the queue</a> and is required for Scheduler Workbench to function correctly. See <a href=http://drupal.org/node/1660252>#1660252 “<em>Publishing transitions twice through draft</em>” on drupal.org</a> for more detail.</p>
+<p>Another bonus about Scheduler and Scheduler Workbench modules is that it does not require a cron-management module like <a href=http://drupal.org/project/elysia_cron>Elyisia Cron</a>, as you can call Scheduler module's own cron callback without invoking Drupal's full cron. This is important because calling Drupal’s full cron too frequently causes performance issues, while calling it too infrequently means scheduled (un)publishing events are often “late”.</p>
+<p>Scheduler Workbench can also be configured in such a way that it handles content "freshness" requirements. PreviousNext has found that many Australian government organisations regularly audit their content. In some cases content should even become unpublished if staff have not been marked the content as reviewed within about one year of it being published.</p>
+<p>PreviousNext also implemented a Rules-based solution of content freshness for our client project. The default review period is set per content type, but the exact expiry date can be overridden on an individual content item’s “<em>review by</em>” date field. If a content item is not manually updated or “<em>marked as reviewed</em>”, it can be configured to become unpublished and marked as “<em>needs review</em>”, or just marked as “<em>needs review</em>” but left published. And the default value for this option is configurable per content type.</p>
+<p>Scheduler and Scheduler Workbench modules can be configured to implement a significant portion of such “freshness” requirements.</p>
+</div>
+<div class=post-footer>
+<div class=info>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div><footer class="footer footer--base">
+<div class=by_farbox>
+<ul class=footer__list>
+<li class=footer__item>
+&copy;
+2007-2022 Bevan Rudge
+</li>
+</ul>
+</div>
+</footer>
+<script type=text/javascript src=/js/medium-zoom.min.71100d84fab0ad794b8399a66ac810700cc78d703f715dc10af4d7ba7b761362.js integrity="sha256-cRANhPqwrXlLg5mmasgQcAzHjXA/cV3BCvTXunt2E2I=" crossorigin=anonymous></script></body>
+</html>
